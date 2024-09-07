@@ -199,7 +199,7 @@ h6 {
 
 .header .branding {
   background-color: var(--background-color);
-  min-height: 60px;
+  min-height: 100px;
   padding: 10px 0;
 }
 
@@ -208,12 +208,12 @@ h6 {
 }
 
 .header .logo img {
-  max-height: 36px;
+  max-height: 80px;
   margin-right: 8px;
 }
 
 .header .logo h1 {
-  font-size: 30px;
+  font-size: 50px;
   margin: 0;
   font-weight: 700;
   color: var(--heading-color);
@@ -239,6 +239,7 @@ h6 {
   }
 
   .navmenu ul {
+  
     margin: 0;
     padding: 0;
     display: flex;
@@ -248,10 +249,12 @@ h6 {
 
   .navmenu li {
     position: relative;
+   
   }
 
   .navmenu a,
   .navmenu a:focus {
+
     color: var(--nav-color);
     padding: 18px 15px;
     font-size: 15px;
@@ -266,7 +269,8 @@ h6 {
 
   .navmenu a i,
   .navmenu a:focus i {
-    font-size: 12px;
+    font-size: 14px;
+    font-weight: 300;
     line-height: 0;
     margin-left: 5px;
     transition: 0.3s;
