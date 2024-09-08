@@ -28,14 +28,6 @@
 
     <!-- Main CSS File -->
     <link href="assets/css/main.css" rel="stylesheet">
-
-    <!-- =======================================================
-  * Template Name: BizLand
-  * Template URL: https://bootstrapmade.com/bizland-bootstrap-business-template/
-  * Updated: Aug 07 2024 with Bootstrap v5.3.3
-  * Author: BootstrapMade.com
-  * License: https://bootstrapmade.com/license/
-  ======================================================== -->
 </head>
 
 <style type="text/css">
@@ -318,19 +310,19 @@
         <!-- Hero Section -->
         <section id="hero" class="hero section light-background">
 
-            <div class="container">
+            <div class="container text-center">
                 <div class="row gy-4">
                     <div class="col-lg-6 order-2 order-lg-1 d-flex flex-column justify-content-center"
                         data-aos="zoom-out">
                         <h1>Welcome to <span>BizLand</span></h1>
-                        <p>We are team of talented designers making websites with Bootstrap</p>
+                        <!-- <p>We are team of talented designers making websites with Bootstrap</p>
                         <div class="d-flex">
                             <a href="#about" class="btn-get-started">Get Started</a>
                             <a href="https://www.youtube.com/watch?v=Y7f98aduVJ8"
                                 class="glightbox btn-watch-video d-flex align-items-center"><i
                                     class="bi bi-play-circle"></i><span>Watch
                                     Video</span></a>
-                        </div>
+                        </div> -->
                     </div>
                 </div>
             </div>
@@ -353,44 +345,150 @@
                     <div class="col-lg">
 
                         <div class="info-wrap">
-                            <table>
-                                <thead>
-                                    <tr>
-                                        <th style="width: 10%">No</th>
-                                        <th style="width: 40%">Nama Lokasi</th>
-                                        <th style="width: 15%">Telepon</th>
-                                        <th style="width: 20%">Link Map</th>
-                                        <th style="width: 15%">Foto</th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    <tr>
-                                        <td>1</td>
-                                        <td class="font-weight-bold mb-0">
-                                            Posko Mudik Gombel
-                                            <p class="text-muted mb-0 wrapword">Jl. Tanah Putih II, Ngesrep, Kec.
-                                                Banyumanik, Kota Semarang, Jawa Tengah 50261</p>
-                                            <p class="text-muted mb-0 wrapword"><b>Fasilitas</b> : Dapur Umum, Tenda,
-                                                Toilet, Tempat Ibadah, Free Buka & Sahur, Towing, Pos Kesehatan, Pos
-                                                Komunikasi</p>
-                                        </td>
-                                        <td>
-                                            <a href="tel://-" target="_blank"><button
-                                                    class="btn btn-info">-</button></a>
-                                        </td>
-                                        <td>
-                                            <a href="https://www.google.com/maps/dir/Current+Location/-7.040018,110.421374/@-7.040018,110.421374,17z?entry=ttu"
-                                                target="_blank"><button class="btn btn-primary">Buka Map</button></a>
-                                            <p>Jarak : 6.07 km</p>
-                                        </td>
-                                        <td>
-                                            <img src="/uploads/data_lokasi/20240328092020-2024-03-28data_lokasi092017.webp"
-                                                width="100%" />
-                                        </td>
-                                    </tr>
-                                    <!-- ... -->
-                                </tbody>
-                            </table>
+                            <div class="info-wrap">
+                                <table>
+                                    <thead>
+                                        <tr>
+                                            <th style="width: 10%">No</th>
+                                            <th style="width: 40%">Nama Lokasi</th>
+                                            <th style="width: 15%">Telepon</th>
+                                            <th style="width: 20%">Link Map</th>
+                                            <th style="width: 15%">Foto</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td>1</td>
+                                            <td class="font-weight-bold mb-0">
+                                                Posko Mudik Gombel
+                                                <p class="text-muted mb-0 wrapword">Jl. Tanah Putih II, Ngesrep, Kec.
+                                                    Banyumanik, Kota Semarang, Jawa Tengah 50261</p>
+                                                <p class="text-muted mb-0 wrapword"><b>Fasilitas</b> : Dapur Umum,
+                                                    Tenda,
+                                                    Toilet, Tempat Ibadah, Free Buka & Sahur, Towing, Pos Kesehatan, Pos
+                                                    Komunikasi</p>
+                                            </td>
+                                            <td>
+                                                <a href="tel://-" target="_blank"><button
+                                                        class="btn btn-info">-</button></a>
+                                            </td>
+                                            <td>
+                                                <a href="https://www.google.com/maps/dir/Current+Location/-7.040018,110.421374/@-7.040018,110.421374,17z?entry=ttu"
+                                                    target="_blank"><button class="btn btn-primary">Buka
+                                                        Map</button></a>
+                                                <p>Jarak : 6.07 km</p>
+                                            </td>
+                                            <td>
+                                                <img src="/uploads/data_lokasi/20240328092020-2024-03-28data_lokasi092017.webp"
+                                                    width="100%" />
+                                            </td>
+                                        </tr>
+                                        <!-- ... -->
+                                    </tbody>
+                                </table>
+                            </div>
+                            <div class="info-wrap">
+                                <table>
+                                    <thead>
+                                        <tr>
+                                            <th style="width: 10%">No</th>
+                                            <th style="width: 40%">Nama Lokasi</th>
+                                            <th style="width: 15%">Telepon</th>
+                                            <th style="width: 20%">Link Map</th>
+                                            <th style="width: 15%">Foto</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td>1</td>
+                                            <td class="font-weight-bold mb-0">
+                                                Posko Mudik Gombel
+                                                <p class="text-muted mb-0 wrapword">Jl. Tanah Putih II, Ngesrep, Kec.
+                                                    Banyumanik, Kota Semarang, Jawa Tengah 50261</p>
+                                                <p class="text-muted mb-0 wrapword"><b>Fasilitas</b> : Dapur Umum,
+                                                    Tenda,
+                                                    Toilet, Tempat Ibadah, Free Buka & Sahur, Towing, Pos Kesehatan, Pos
+                                                    Komunikasi</p>
+                                            </td>
+                                            <td>
+                                                <a href="tel://-" target="_blank"><button
+                                                        class="btn btn-info">-</button></a>
+                                            </td>
+                                            <td>
+                                                <a href="https://www.google.com/maps/dir/Current+Location/-7.040018,110.421374/@-7.040018,110.421374,17z?entry=ttu"
+                                                    target="_blank"><button class="btn btn-primary">Buka
+                                                        Map</button></a>
+                                                <p>Jarak : 6.07 km</p>
+                                            </td>
+                                            <td>
+                                                <img src="/uploads/data_lokasi/20240328092020-2024-03-28data_lokasi092017.webp"
+                                                    width="100%" />
+                                            </td>
+                                        </tr>
+                                        <!-- ... -->
+                                    </tbody>
+                                </table>
+                            </div>
+                            <div class="info-wrap">
+                                <table>
+                                    <thead>
+                                        <tr>
+                                            <th style="width: 10%">No</th>
+                                            <th style="width: 40%">Nama Lokasi</th>
+                                            <th style="width: 15%">Telepon</th>
+                                            <th style="width: 20%">Link Map</th>
+                                            <th style="width: 15%">Foto</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td>1</td>
+                                            <td class="font-weight-bold mb-0">
+                                                Posko Mudik Gombel
+                                                <p class="text-muted mb-0 wrapword">Jl. Tanah Putih II, Ngesrep, Kec.
+                                                    Banyumanik, Kota Semarang, Jawa Tengah 50261</p>
+                                                <p class="text-muted mb-0 wrapword"><b>Fasilitas</b> : Dapur Umum,
+                                                    Tenda,
+                                                    Toilet, Tempat Ibadah, Free Buka & Sahur, Towing, Pos Kesehatan, Pos
+                                                    Komunikasi</p>
+                                            </td>
+                                            <td>
+                                                <a href="tel://-" target="_blank"><button
+                                                        class="btn btn-info">-</button></a>
+                                            </td>
+                                            <td>
+                                                <a href="https://www.google.com/maps/dir/Current+Location/-7.040018,110.421374/@-7.040018,110.421374,17z?entry=ttu"
+                                                    target="_blank"><button class="btn btn-primary">Buka
+                                                        Map</button></a>
+                                                <p>Jarak : 6.07 km</p>
+                                            </td>
+                                            <td>
+                                                <img src="/uploads/data_lokasi/20240328092020-2024-03-28data_lokasi092017.webp"
+                                                    width="100%" />
+                                            </td>
+                                        </tr>
+                                        <!-- ... -->
+                                    </tbody>
+
+
+                                </table>
+                            </div>
+                            <!-- Disabled and active states -->
+                            <nav aria-label="...">
+                                <ul class="pagination">
+                                    <li class="page-item disabled">
+                                        <a class="page-link" href="#" tabindex="-1" aria-disabled="true">Previous</a>
+                                    </li>
+                                    <li class="page-item"><a class="page-link" href="#">1</a></li>
+                                    <li class="page-item active" aria-current="page">
+                                        <a class="page-link" href="#">2</a>
+                                    </li>
+                                    <li class="page-item"><a class="page-link" href="#">3</a></li>
+                                    <li class="page-item">
+                                        <a class="page-link" href="#">Next</a>
+                                    </li>
+                                </ul>
+                            </nav><!-- End Disabled and active states -->
                         </div>
 
                     </div>
