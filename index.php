@@ -31,215 +31,215 @@
 </head>
 
 <style type="text/css">
-    .logo-image {
-        max-width: 100px;
-        max-height: 50px;
-        display: block;
-        margin: 0 auto;
-    }
+.logo-image {
+    max-width: 100px;
+    max-height: 50px;
+    display: block;
+    margin: 0 auto;
+}
 
-    .table {
-        border-spacing: 0 0.85rem !important;
-    }
+.table {
+    border-spacing: 0 0.85rem !important;
+}
 
-    .table .dropdown {
-        display: inline-block;
-    }
+.table .dropdown {
+    display: inline-block;
+}
 
-    .table td,
-    .table th {
-        vertical-align: middle;
-        margin-bottom: 10px;
-        border: none;
-    }
+.table td,
+.table th {
+    vertical-align: middle;
+    margin-bottom: 10px;
+    border: none;
+}
 
-    .table thead tr,
-    .table thead th {
-        border: none;
-        font-size: 12px;
-        letter-spacing: 1px;
-        text-transform: uppercase;
-        background: transparent;
-    }
+.table thead tr,
+.table thead th {
+    border: none;
+    font-size: 12px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    background: transparent;
+}
 
-    .table td {
-        background: #fff;
-    }
+.table td {
+    background: #fff;
+}
 
-    .table td:first-child {
-        border-top-left-radius: 10px;
-        border-bottom-left-radius: 10px;
-    }
+.table td:first-child {
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px;
+}
 
-    .table td:last-child {
-        border-top-right-radius: 10px;
-        border-bottom-right-radius: 10px;
-    }
+.table td:last-child {
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px;
+}
 
-    .avatar {
-        width: 2.75rem;
-        height: 2.75rem;
-        line-height: 3rem;
-        border-radius: 50%;
-        display: inline-block;
-        background: transparent;
-        position: relative;
-        text-align: center;
-        color: #868e96;
-        font-weight: 700;
-        vertical-align: bottom;
-        font-size: 1rem;
-        -webkit-user-select: none;
-        -moz-user-select: none;
-        -ms-user-select: none;
-        user-select: none;
-    }
+.avatar {
+    width: 2.75rem;
+    height: 2.75rem;
+    line-height: 3rem;
+    border-radius: 50%;
+    display: inline-block;
+    background: transparent;
+    position: relative;
+    text-align: center;
+    color: #868e96;
+    font-weight: 700;
+    vertical-align: bottom;
+    font-size: 1rem;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
 
-    .avatar-sm {
-        width: 2.5rem;
-        height: 2.5rem;
-        font-size: 0.83333rem;
-        line-height: 1.5;
-    }
+.avatar-sm {
+    width: 2.5rem;
+    height: 2.5rem;
+    font-size: 0.83333rem;
+    line-height: 1.5;
+}
 
-    .avatar-img {
-        width: 100%;
-        height: 100%;
-        -o-object-fit: cover;
-        object-fit: cover;
-    }
+.avatar-img {
+    width: 100%;
+    height: 100%;
+    -o-object-fit: cover;
+    object-fit: cover;
+}
 
-    .avatar-blue {
-        background-color: #c8d9f1;
-        color: #467fcf;
-    }
+.avatar-blue {
+    background-color: #c8d9f1;
+    color: #467fcf;
+}
 
-    table.dataTable.dtr-inline.collapsed>tbody>tr[role="row"]>td:first-child:before,
-    table.dataTable.dtr-inline.collapsed>tbody>tr[role="row"]>th:first-child:before {
-        top: 28px;
-        left: 14px;
-        border: none;
-        box-shadow: none;
-    }
+table.dataTable.dtr-inline.collapsed>tbody>tr[role="row"]>td:first-child:before,
+table.dataTable.dtr-inline.collapsed>tbody>tr[role="row"]>th:first-child:before {
+    top: 28px;
+    left: 14px;
+    border: none;
+    box-shadow: none;
+}
 
-    table.dataTable.dtr-inline.collapsed>tbody>tr[role="row"]>td:first-child,
-    table.dataTable.dtr-inline.collapsed>tbody>tr[role="row"]>th:first-child {
-        padding-left: 48px;
-    }
+table.dataTable.dtr-inline.collapsed>tbody>tr[role="row"]>td:first-child,
+table.dataTable.dtr-inline.collapsed>tbody>tr[role="row"]>th:first-child {
+    padding-left: 48px;
+}
 
-    table.dataTable>tbody>tr.child ul.dtr-details {
-        width: 100%;
-    }
+table.dataTable>tbody>tr.child ul.dtr-details {
+    width: 100%;
+}
 
-    table.dataTable>tbody>tr.child span.dtr-title {
-        min-width: 50%;
-    }
+table.dataTable>tbody>tr.child span.dtr-title {
+    min-width: 50%;
+}
 
-    table.dataTable.dtr-inline.collapsed>tbody>tr>td.child,
-    table.dataTable.dtr-inline.collapsed>tbody>tr>th.child,
-    table.dataTable.dtr-inline.collapsed>tbody>tr>td.dataTables_empty {
-        padding: 0.75rem 1rem 0.125rem;
-    }
+table.dataTable.dtr-inline.collapsed>tbody>tr>td.child,
+table.dataTable.dtr-inline.collapsed>tbody>tr>th.child,
+table.dataTable.dtr-inline.collapsed>tbody>tr>td.dataTables_empty {
+    padding: 0.75rem 1rem 0.125rem;
+}
 
-    div.dataTables_wrapper div.dataTables_length label,
-    div.dataTables_wrapper div.dataTables_filter label {
-        margin-bottom: 0;
-    }
+div.dataTables_wrapper div.dataTables_length label,
+div.dataTables_wrapper div.dataTables_filter label {
+    margin-bottom: 0;
+}
 
-    @media (max-width: 767px) {
-        div.dataTables_wrapper div.dataTables_paginate ul.pagination {
-            -ms-flex-pack: center !important;
-            justify-content: center !important;
-            margin-top: 1rem;
-        }
+@media (max-width: 767px) {
+    div.dataTables_wrapper div.dataTables_paginate ul.pagination {
+        -ms-flex-pack: center !important;
+        justify-content: center !important;
+        margin-top: 1rem;
     }
+}
 
-    .btn-icon {
-        background: #fff;
-    }
+.btn-icon {
+    background: #fff;
+}
 
-    .btn-icon .bx {
-        font-size: 20px;
-    }
+.btn-icon .bx {
+    font-size: 20px;
+}
 
-    .btn .bx {
-        vertical-align: middle;
-        font-size: 20px;
-    }
+.btn .bx {
+    vertical-align: middle;
+    font-size: 20px;
+}
 
-    .dropdown-menu {
-        padding: 0.25rem 0;
-    }
+.dropdown-menu {
+    padding: 0.25rem 0;
+}
 
-    .dropdown-item {
-        padding: 0.5rem 1rem;
-    }
+.dropdown-item {
+    padding: 0.5rem 1rem;
+}
 
-    .badge {
-        padding: 0.5em 0.75em;
-    }
+.badge {
+    padding: 0.5em 0.75em;
+}
 
-    .badge-success-alt {
-        background-color: #d7f2c2;
-        color: #7bd235;
-    }
+.badge-success-alt {
+    background-color: #d7f2c2;
+    color: #7bd235;
+}
 
-    .table a {
-        color: #212529;
-    }
+.table a {
+    color: #212529;
+}
 
-    .table a:hover,
-    .table a:focus {
-        text-decoration: none;
-    }
+.table a:hover,
+.table a:focus {
+    text-decoration: none;
+}
 
-    table.dataTable {
-        margin-top: 12px !important;
-    }
+table.dataTable {
+    margin-top: 12px !important;
+}
 
-    .icon>.bx {
-        display: block;
-        min-width: 1.5em;
-        min-height: 1.5em;
-        text-align: center;
-        font-size: 1.0625rem;
-    }
+.icon>.bx {
+    display: block;
+    min-width: 1.5em;
+    min-height: 1.5em;
+    text-align: center;
+    font-size: 1.0625rem;
+}
 
-    .btn {
-        font-size: 0.9375rem;
-        font-weight: 500;
-        padding: 0.5rem 0.75rem;
-    }
+.btn {
+    font-size: 0.9375rem;
+    font-weight: 500;
+    padding: 0.5rem 0.75rem;
+}
 
-    .avatar-blue {
-        background-color: white;
-        color: #467fcf;
-    }
+.avatar-blue {
+    background-color: white;
+    color: #467fcf;
+}
 
-    .avatar-pink {
-        background-color: white;
-        color: #f66d9b;
-    }
+.avatar-pink {
+    background-color: white;
+    color: #f66d9b;
+}
 </style>
 
 <style>
-    .wrapword {
-        white-space: -moz-pre-wrap !important;
-        /* Mozilla, since 1999 */
-        white-space: -pre-wrap;
-        /* Opera 4-6 */
-        white-space: -o-pre-wrap;
-        /* Opera 7 */
-        white-space: pre-wrap;
-        /* css-3 */
-        word-wrap: break-word;
-        /* Internet Explorer 5.5+ */
-        white-space: -webkit-pre-wrap;
-        /* Newer versions of Chrome/Safari*/
-        /*word-break: break-all;*/
-        white-space: normal;
-        overflow-wrap: break-word;
-    }
+.wrapword {
+    white-space: -moz-pre-wrap !important;
+    /* Mozilla, since 1999 */
+    white-space: -pre-wrap;
+    /* Opera 4-6 */
+    white-space: -o-pre-wrap;
+    /* Opera 7 */
+    white-space: pre-wrap;
+    /* css-3 */
+    word-wrap: break-word;
+    /* Internet Explorer 5.5+ */
+    white-space: -webkit-pre-wrap;
+    /* Newer versions of Chrome/Safari*/
+    /*word-break: break-all;*/
+    white-space: normal;
+    overflow-wrap: break-word;
+}
 </style>
 
 <body class="index-page">
@@ -314,9 +314,14 @@
                 <div class="row gy-4">
                     <div class="col-lg-6 order-2 order-lg-1 d-flex flex-column justify-content-center"
                         data-aos="zoom-out">
-                        <h1>Welcome to <span>BizLand</span></h1>
                         <!-- <p>We are team of talented designers making websites with Bootstrap</p>
                         <div class="d-flex">
+                    <div class="col-lg-6 order-2 order-lg-1 d-flex flex-column justify-content-center"
+                        data-aos="zoom-out">-->
+                        <h1>Daftar Informasi Seputar <br><span>Sekolah Di Kota Semarang</span></h1>
+                        <!-- <p>We are team of talented designers making websites with Bootstrap</p> -->
+                        <!-- <div class="d-flex">
+
                             <a href="#about" class="btn-get-started">Get Started</a>
                             <a href="https://www.youtube.com/watch?v=Y7f98aduVJ8"
                                 class="glightbox btn-watch-video d-flex align-items-center"><i
@@ -329,6 +334,7 @@
 
         </section><!-- /Hero Section -->
 
+
         <!-- Contact Section -->
         <section id="contact" class="contact section">
 
@@ -337,6 +343,7 @@
                 <h2>Contact</h2>
                 <p><span>Need Help?</span> <span class="description-title">Contact Us</span></p>
             </div><!-- End Section Title -->
+
 
             <div class="container" data-aos="fade-up" data-aos-delay="100">
 

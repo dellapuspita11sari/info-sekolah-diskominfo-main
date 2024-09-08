@@ -1,1 +1,0 @@
-nama nama lokasi sekolah di semarang
