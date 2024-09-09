@@ -19,6 +19,7 @@
 
 /* Global Colors - The following color variables are used throughout the website. Updating them here will change the color scheme of the entire website */
 :root { 
+  --footer-color:  #0d0c41;
   --card-color:  #ebebeb;
   --background-color: #ffffff; /* Background color for the entire website, including individual sections */
   --default-color: #444444; /* Default color used for the majority of the text content across the entire website */
@@ -471,19 +472,253 @@ h6 {
   }
 }
 
+/* footer */
+
+.footer-bottom .copyright-text {
+  text-align: center; /* Mengatur teks menjadi rata tengah */
+  font-size: large;
+}
+
+
+.footer .container-footer{
+  color: #ffff;
+}
+
+.footer .row-color{
+  color: #ffff;
+}
+
+.user-links li a {
+  color: #ffffff; /* Mengubah warna teks menjadi putih */
+  text-decoration: none; /* Menghapus garis bawah pada tautan */
+}
+
+.user-links li a:hover {
+  color: #0088ff; /* Mengubah warna teks saat hover */
+}
+
+.contact-list li a {
+  color: #ffffff; /* Mengubah warna teks menjadi putih */
+  text-decoration: none; /* Menghapus garis bawah pada tautan */
+}
+
+.contact-list li a:hover {
+  color: #0088ff; /* Mengubah warna teks saat hover */
+}
+
+
+.logo-image {
+  max-width: 400px;
+  max-height: 100px;
+  display: block;
+  margin: 0 auto;
+}
+
+.table {
+  border-spacing: 0 0.85rem !important;
+}
+
+.table .dropdown {
+  display: inline-block;
+}
+
+.table td,
+.table th {
+  vertical-align: middle;
+  margin-bottom: 10px;
+  border: none;
+}
+
+.table thead tr,
+.table thead th {
+  border: none;
+  font-size: 12px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  background: transparent;
+}
+
+.table td {
+  background: #fff;
+}
+
+.table td:first-child {
+  border-top-left-radius: 10px;
+  border-bottom-left-radius: 10px;
+}
+
+.table td:last-child {
+  border-top-right-radius: 10px;
+  border-bottom-right-radius: 10px;
+}
+
+.avatar {
+  width: 2.75rem;
+  height: 2.75rem;
+  line-height: 3rem;
+  border-radius: 50%;
+  display: inline-block;
+  background: transparent;
+  position: relative;
+  text-align: center;
+  color: #868e96;
+  font-weight: 700;
+  vertical-align: bottom;
+  font-size: 1rem;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.avatar-sm {
+  width: 2.5rem;
+  height: 2.5rem;
+  font-size: 0.83333rem;
+  line-height: 1.5;
+}
+
+.avatar-img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+  object-fit: cover;
+}
+
+.avatar-blue {
+  background-color: #c8d9f1;
+  color: #467fcf;
+}
+
+table.dataTable.dtr-inline.collapsed>tbody>tr[role="row"]>td:first-child:before,
+table.dataTable.dtr-inline.collapsed>tbody>tr[role="row"]>th:first-child:before {
+  top: 28px;
+  left: 14px;
+  border: none;
+  box-shadow: none;
+}
+
+table.dataTable.dtr-inline.collapsed>tbody>tr[role="row"]>td:first-child,
+table.dataTable.dtr-inline.collapsed>tbody>tr[role="row"]>th:first-child {
+  padding-left: 48px;
+}
+
+table.dataTable>tbody>tr.child ul.dtr-details {
+  width: 100%;
+}
+
+table.dataTable>tbody>tr.child span.dtr-title {
+  min-width: 50%;
+}
+
+table.dataTable.dtr-inline.collapsed>tbody>tr>td.child,
+table.dataTable.dtr-inline.collapsed>tbody>tr>th.child,
+table.dataTable.dtr-inline.collapsed>tbody>tr>td.dataTables_empty {
+  padding: 0.75rem 1rem 0.125rem;
+}
+
+div.dataTables_wrapper div.dataTables_length label,
+div.dataTables_wrapper div.dataTables_filter label {
+  margin-bottom: 0;
+}
+
+@media (max-width: 767px) {
+  div.dataTables_wrapper div.dataTables_paginate ul.pagination {
+      -ms-flex-pack: center !important;
+      justify-content: center !important;
+      margin-top: 1rem;
+  }
+}
+
+.btn-icon {
+  background: #fff;
+}
+
+.btn-icon .bx {
+  font-size: 20px;
+}
+
+.btn .bx {
+  vertical-align: middle;
+  font-size: 20px;
+}
+
+.dropdown-menu {
+  padding: 0.25rem 0;
+}
+
+.dropdown-item {
+  padding: 0.5rem 1rem;
+}
+
+.badge {
+  padding: 0.5em 0.75em;
+}
+
+.badge-success-alt {
+  background-color: #d7f2c2;
+  color: #7bd235;
+}
+
+.table a {
+  color: #ffffff;
+}
+
+.table a:hover,
+.table a:focus {
+  text-decoration: none;
+}
+
+table.dataTable {
+  margin-top: 12px !important;
+}
+
+.icon>.bx {
+  display: block;
+  min-width: 1.5em;
+  min-height: 1.5em;
+  text-align: center;
+  font-size: 1.0625rem;
+}
+
+.btn {
+  font-size: 0.9375rem;
+  font-weight: 500;
+  padding: 0.5rem 0.75rem;
+}
+
+.avatar-blue {
+  background-color: white;
+  color: #467fcf;
+}
+
+.avatar-pink {
+  background-color: white;
+  color: #f66d9b;
+}
+
 /*--------------------------------------------------------------
 # Global Footer
 --------------------------------------------------------------*/
 .footer {
-  color: var(--default-color);
-  background-color: var(--background-color);
+  padding-top: 50px;
+  color: var(--footer-color);
+  background-color: var(--footer-color);
   font-size: 14px;
-  padding-bottom: 50px;
   position: relative;
 }
 
+.footer .footer-bottom {
+    position: relative;
+    width: 100%;
+    background-color: rgba(255, 255, 255, .10);
+    text-align: center;
+}
+
+
+
 .footer .footer-newsletter {
-  background-color: color-mix(in srgb, var(--accent-color), transparent 96%);
+  background-color: color-mix(in srgb, var(--footer-color), transparent 96%);
   padding: 50px 0;
 }
 
@@ -1729,6 +1964,100 @@ section,
   color: var(--accent-color);
 }
 
+/* top table */
+
+
+.top-table {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+
+.filter-search-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+/* .search-container {
+  order: 2;
+}
+
+.filter-container {
+  order: 1;
+} */
+
+
+.search-container, .filter-container {
+  display: flex;
+  align-items: center;
+}
+
+.filter-container label,
+.search-container label {
+  margin-right: 10px;
+  font-weight: bold;
+  color: #ffffff;
+}
+
+.filter-container select,
+.search-container input {
+  padding: 10px;
+  font-size: 14px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  transition: all 0.3s ease;
+}
+
+.filter-container select {
+  background-color: #fff;
+  color: #ffffff;
+}
+
+.search-container input {
+  width: 250px;
+  background-color: #fff;
+  color: #333;
+}
+
+.filter-container select:hover,
+.search-container input:hover {
+  border-color: #007bff;
+  box-shadow: 0 0 8px rgba(255, 255, 255, 0.3);
+}
+
+.filter-container select:focus,
+.search-container input:focus {
+  outline: none;
+  border-color: #007bff;
+  box-shadow: 0 0 8px rgba(0, 123, 255, 0.5);
+}
+
+.search-container input::placeholder {
+  color: #999;
+}
+
+.filter-container select option {
+  padding: 10px;
+} 
+/* 
+bottom table */
+
+.bottom-table {
+  display: flex;
+  justify-content: space-between; /* Menjajarkan elemen ke kiri dan kanan */
+  align-items: center; /* Vertically center items */
+  margin-top: 20px; /* Jarak di atas table */
+}
+
+.entries-info {
+  font-size: 16px;
+  color: #666;
+}
+
 /* card */
 
 .card {
@@ -1767,8 +2096,6 @@ section,
 /*--------------------------------------------------------------
 # Contact Section
 --------------------------------------------------------------*/
-
-
 
 .contact .info-wrap {
   background-color: var(--surface-color);
