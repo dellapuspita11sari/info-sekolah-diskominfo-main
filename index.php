@@ -34,23 +34,23 @@
 </style>
 
 <style>
-    .wrapword {
-        white-space: -moz-pre-wrap !important;
-        /* Mozilla, since 1999 */
-        white-space: -pre-wrap;
-        /* Opera 4-6 */
-        white-space: -o-pre-wrap;
-        /* Opera 7 */
-        white-space: pre-wrap;
-        /* css-3 */
-        word-wrap: break-word;
-        /* Internet Explorer 5.5+ */
-        white-space: -webkit-pre-wrap;
-        /* Newer versions of Chrome/Safari*/
-        /*word-break: break-all;*/
-        white-space: normal;
-        overflow-wrap: break-word;
-    }
+.wrapword {
+    white-space: -moz-pre-wrap !important;
+    /* Mozilla, since 1999 */
+    white-space: -pre-wrap;
+    /* Opera 4-6 */
+    white-space: -o-pre-wrap;
+    /* Opera 7 */
+    white-space: pre-wrap;
+    /* css-3 */
+    word-wrap: break-word;
+    /* Internet Explorer 5.5+ */
+    white-space: -webkit-pre-wrap;
+    /* Newer versions of Chrome/Safari*/
+    /*word-break: break-all;*/
+    white-space: normal;
+    overflow-wrap: break-word;
+}
 </style>
 
 <body class="index-page">
@@ -122,9 +122,8 @@
         <section id="hero" class="hero section light-background">
 
             <div class="container">
-                <div class="row gy-4">
-                    <div class="col-lg-6 order-2 order-lg-1 d-flex flex-column justify-content-center"
-                        data-aos="zoom-out">
+                <div class="row">
+                    <div class="justify-content-center" data-aos="zoom-out">
 
                         <h1 class="text-center">Daftar Informasi Seputar <br><span>Sekolah Di Kota Semarang</span></h1>
                         <!-- <p>We are team of talented designers making websites with Bootstrap</p> -->
