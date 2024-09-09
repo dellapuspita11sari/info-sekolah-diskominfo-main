@@ -31,215 +31,215 @@
 </head>
 
 <style type="text/css">
-.logo-image {
-    max-width: 100px;
-    max-height: 50px;
-    display: block;
-    margin: 0 auto;
-}
-
-.table {
-    border-spacing: 0 0.85rem !important;
-}
-
-.table .dropdown {
-    display: inline-block;
-}
-
-.table td,
-.table th {
-    vertical-align: middle;
-    margin-bottom: 10px;
-    border: none;
-}
-
-.table thead tr,
-.table thead th {
-    border: none;
-    font-size: 12px;
-    letter-spacing: 1px;
-    text-transform: uppercase;
-    background: transparent;
-}
-
-.table td {
-    background: #fff;
-}
-
-.table td:first-child {
-    border-top-left-radius: 10px;
-    border-bottom-left-radius: 10px;
-}
-
-.table td:last-child {
-    border-top-right-radius: 10px;
-    border-bottom-right-radius: 10px;
-}
-
-.avatar {
-    width: 2.75rem;
-    height: 2.75rem;
-    line-height: 3rem;
-    border-radius: 50%;
-    display: inline-block;
-    background: transparent;
-    position: relative;
-    text-align: center;
-    color: #868e96;
-    font-weight: 700;
-    vertical-align: bottom;
-    font-size: 1rem;
-    -webkit-user-select: none;
-    -moz-user-select: none;
-    -ms-user-select: none;
-    user-select: none;
-}
-
-.avatar-sm {
-    width: 2.5rem;
-    height: 2.5rem;
-    font-size: 0.83333rem;
-    line-height: 1.5;
-}
-
-.avatar-img {
-    width: 100%;
-    height: 100%;
-    -o-object-fit: cover;
-    object-fit: cover;
-}
-
-.avatar-blue {
-    background-color: #c8d9f1;
-    color: #467fcf;
-}
-
-table.dataTable.dtr-inline.collapsed>tbody>tr[role="row"]>td:first-child:before,
-table.dataTable.dtr-inline.collapsed>tbody>tr[role="row"]>th:first-child:before {
-    top: 28px;
-    left: 14px;
-    border: none;
-    box-shadow: none;
-}
-
-table.dataTable.dtr-inline.collapsed>tbody>tr[role="row"]>td:first-child,
-table.dataTable.dtr-inline.collapsed>tbody>tr[role="row"]>th:first-child {
-    padding-left: 48px;
-}
-
-table.dataTable>tbody>tr.child ul.dtr-details {
-    width: 100%;
-}
-
-table.dataTable>tbody>tr.child span.dtr-title {
-    min-width: 50%;
-}
-
-table.dataTable.dtr-inline.collapsed>tbody>tr>td.child,
-table.dataTable.dtr-inline.collapsed>tbody>tr>th.child,
-table.dataTable.dtr-inline.collapsed>tbody>tr>td.dataTables_empty {
-    padding: 0.75rem 1rem 0.125rem;
-}
-
-div.dataTables_wrapper div.dataTables_length label,
-div.dataTables_wrapper div.dataTables_filter label {
-    margin-bottom: 0;
-}
-
-@media (max-width: 767px) {
-    div.dataTables_wrapper div.dataTables_paginate ul.pagination {
-        -ms-flex-pack: center !important;
-        justify-content: center !important;
-        margin-top: 1rem;
+    .logo-image {
+        max-width: 100px;
+        max-height: 50px;
+        display: block;
+        margin: 0 auto;
     }
-}
 
-.btn-icon {
-    background: #fff;
-}
+    .table {
+        border-spacing: 0 0.85rem !important;
+    }
 
-.btn-icon .bx {
-    font-size: 20px;
-}
+    .table .dropdown {
+        display: inline-block;
+    }
 
-.btn .bx {
-    vertical-align: middle;
-    font-size: 20px;
-}
+    .table td,
+    .table th {
+        vertical-align: middle;
+        margin-bottom: 10px;
+        border: none;
+    }
 
-.dropdown-menu {
-    padding: 0.25rem 0;
-}
+    .table thead tr,
+    .table thead th {
+        border: none;
+        font-size: 12px;
+        letter-spacing: 1px;
+        text-transform: uppercase;
+        background: transparent;
+    }
 
-.dropdown-item {
-    padding: 0.5rem 1rem;
-}
+    .table td {
+        background: #fff;
+    }
 
-.badge {
-    padding: 0.5em 0.75em;
-}
+    .table td:first-child {
+        border-top-left-radius: 10px;
+        border-bottom-left-radius: 10px;
+    }
 
-.badge-success-alt {
-    background-color: #d7f2c2;
-    color: #7bd235;
-}
+    .table td:last-child {
+        border-top-right-radius: 10px;
+        border-bottom-right-radius: 10px;
+    }
 
-.table a {
-    color: #212529;
-}
+    .avatar {
+        width: 2.75rem;
+        height: 2.75rem;
+        line-height: 3rem;
+        border-radius: 50%;
+        display: inline-block;
+        background: transparent;
+        position: relative;
+        text-align: center;
+        color: #868e96;
+        font-weight: 700;
+        vertical-align: bottom;
+        font-size: 1rem;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+        user-select: none;
+    }
 
-.table a:hover,
-.table a:focus {
-    text-decoration: none;
-}
+    .avatar-sm {
+        width: 2.5rem;
+        height: 2.5rem;
+        font-size: 0.83333rem;
+        line-height: 1.5;
+    }
 
-table.dataTable {
-    margin-top: 12px !important;
-}
+    .avatar-img {
+        width: 100%;
+        height: 100%;
+        -o-object-fit: cover;
+        object-fit: cover;
+    }
 
-.icon>.bx {
-    display: block;
-    min-width: 1.5em;
-    min-height: 1.5em;
-    text-align: center;
-    font-size: 1.0625rem;
-}
+    .avatar-blue {
+        background-color: #c8d9f1;
+        color: #467fcf;
+    }
 
-.btn {
-    font-size: 0.9375rem;
-    font-weight: 500;
-    padding: 0.5rem 0.75rem;
-}
+    table.dataTable.dtr-inline.collapsed>tbody>tr[role="row"]>td:first-child:before,
+    table.dataTable.dtr-inline.collapsed>tbody>tr[role="row"]>th:first-child:before {
+        top: 28px;
+        left: 14px;
+        border: none;
+        box-shadow: none;
+    }
 
-.avatar-blue {
-    background-color: white;
-    color: #467fcf;
-}
+    table.dataTable.dtr-inline.collapsed>tbody>tr[role="row"]>td:first-child,
+    table.dataTable.dtr-inline.collapsed>tbody>tr[role="row"]>th:first-child {
+        padding-left: 48px;
+    }
 
-.avatar-pink {
-    background-color: white;
-    color: #f66d9b;
-}
+    table.dataTable>tbody>tr.child ul.dtr-details {
+        width: 100%;
+    }
+
+    table.dataTable>tbody>tr.child span.dtr-title {
+        min-width: 50%;
+    }
+
+    table.dataTable.dtr-inline.collapsed>tbody>tr>td.child,
+    table.dataTable.dtr-inline.collapsed>tbody>tr>th.child,
+    table.dataTable.dtr-inline.collapsed>tbody>tr>td.dataTables_empty {
+        padding: 0.75rem 1rem 0.125rem;
+    }
+
+    div.dataTables_wrapper div.dataTables_length label,
+    div.dataTables_wrapper div.dataTables_filter label {
+        margin-bottom: 0;
+    }
+
+    @media (max-width: 767px) {
+        div.dataTables_wrapper div.dataTables_paginate ul.pagination {
+            -ms-flex-pack: center !important;
+            justify-content: center !important;
+            margin-top: 1rem;
+        }
+    }
+
+    .btn-icon {
+        background: #fff;
+    }
+
+    .btn-icon .bx {
+        font-size: 20px;
+    }
+
+    .btn .bx {
+        vertical-align: middle;
+        font-size: 20px;
+    }
+
+    .dropdown-menu {
+        padding: 0.25rem 0;
+    }
+
+    .dropdown-item {
+        padding: 0.5rem 1rem;
+    }
+
+    .badge {
+        padding: 0.5em 0.75em;
+    }
+
+    .badge-success-alt {
+        background-color: #d7f2c2;
+        color: #7bd235;
+    }
+
+    .table a {
+        color: #212529;
+    }
+
+    .table a:hover,
+    .table a:focus {
+        text-decoration: none;
+    }
+
+    table.dataTable {
+        margin-top: 12px !important;
+    }
+
+    .icon>.bx {
+        display: block;
+        min-width: 1.5em;
+        min-height: 1.5em;
+        text-align: center;
+        font-size: 1.0625rem;
+    }
+
+    .btn {
+        font-size: 0.9375rem;
+        font-weight: 500;
+        padding: 0.5rem 0.75rem;
+    }
+
+    .avatar-blue {
+        background-color: white;
+        color: #467fcf;
+    }
+
+    .avatar-pink {
+        background-color: white;
+        color: #f66d9b;
+    }
 </style>
 
 <style>
-.wrapword {
-    white-space: -moz-pre-wrap !important;
-    /* Mozilla, since 1999 */
-    white-space: -pre-wrap;
-    /* Opera 4-6 */
-    white-space: -o-pre-wrap;
-    /* Opera 7 */
-    white-space: pre-wrap;
-    /* css-3 */
-    word-wrap: break-word;
-    /* Internet Explorer 5.5+ */
-    white-space: -webkit-pre-wrap;
-    /* Newer versions of Chrome/Safari*/
-    /*word-break: break-all;*/
-    white-space: normal;
-    overflow-wrap: break-word;
-}
+    .wrapword {
+        white-space: -moz-pre-wrap !important;
+        /* Mozilla, since 1999 */
+        white-space: -pre-wrap;
+        /* Opera 4-6 */
+        white-space: -o-pre-wrap;
+        /* Opera 7 */
+        white-space: pre-wrap;
+        /* css-3 */
+        word-wrap: break-word;
+        /* Internet Explorer 5.5+ */
+        white-space: -webkit-pre-wrap;
+        /* Newer versions of Chrome/Safari*/
+        /*word-break: break-all;*/
+        white-space: normal;
+        overflow-wrap: break-word;
+    }
 </style>
 
 <body class="index-page">
@@ -334,17 +334,8 @@ table.dataTable {
 
         </section><!-- /Hero Section -->
 
-
         <!-- Contact Section -->
         <section id="contact" class="contact section">
-
-            <!-- Section Title -->
-            <div class="container section-title" data-aos="fade-up">
-                <h2>Contact</h2>
-                <p><span>Need Help?</span> <span class="description-title">Contact Us</span></p>
-            </div><!-- End Section Title -->
-
-
             <div class="container" data-aos="fade-up" data-aos-delay="100">
 
                 <div class="row gy-4">
@@ -352,137 +343,131 @@ table.dataTable {
                     <div class="col-lg">
 
                         <div class="info-wrap">
-                            <div class="info-wrap">
-                                <table>
-                                    <thead>
-                                        <tr>
-                                            <th style="width: 10%">No</th>
-                                            <th style="width: 40%">Nama Lokasi</th>
-                                            <th style="width: 15%">Telepon</th>
-                                            <th style="width: 20%">Link Map</th>
-                                            <th style="width: 15%">Foto</th>
-                                        </tr>
-                                    </thead>
-                                    <tbody>
-                                        <tr>
-                                            <td>1</td>
-                                            <td class="font-weight-bold mb-0">
-                                                Posko Mudik Gombel
-                                                <p class="text-muted mb-0 wrapword">Jl. Tanah Putih II, Ngesrep, Kec.
-                                                    Banyumanik, Kota Semarang, Jawa Tengah 50261</p>
-                                                <p class="text-muted mb-0 wrapword"><b>Fasilitas</b> : Dapur Umum,
-                                                    Tenda,
-                                                    Toilet, Tempat Ibadah, Free Buka & Sahur, Towing, Pos Kesehatan, Pos
-                                                    Komunikasi</p>
-                                            </td>
-                                            <td>
-                                                <a href="tel://-" target="_blank"><button
-                                                        class="btn btn-info">-</button></a>
-                                            </td>
-                                            <td>
-                                                <a href="https://www.google.com/maps/dir/Current+Location/-7.040018,110.421374/@-7.040018,110.421374,17z?entry=ttu"
-                                                    target="_blank"><button class="btn btn-primary">Buka
-                                                        Map</button></a>
-                                                <p>Jarak : 6.07 km</p>
-                                            </td>
-                                            <td>
-                                                <img src="/uploads/data_lokasi/20240328092020-2024-03-28data_lokasi092017.webp"
-                                                    width="100%" />
-                                            </td>
-                                        </tr>
-                                        <!-- ... -->
-                                    </tbody>
-                                </table>
-                            </div>
-                            <div class="info-wrap">
-                                <table>
-                                    <thead>
-                                        <tr>
-                                            <th style="width: 10%">No</th>
-                                            <th style="width: 40%">Nama Lokasi</th>
-                                            <th style="width: 15%">Telepon</th>
-                                            <th style="width: 20%">Link Map</th>
-                                            <th style="width: 15%">Foto</th>
-                                        </tr>
-                                    </thead>
-                                    <tbody>
-                                        <tr>
-                                            <td>1</td>
-                                            <td class="font-weight-bold mb-0">
-                                                Posko Mudik Gombel
-                                                <p class="text-muted mb-0 wrapword">Jl. Tanah Putih II, Ngesrep, Kec.
-                                                    Banyumanik, Kota Semarang, Jawa Tengah 50261</p>
-                                                <p class="text-muted mb-0 wrapword"><b>Fasilitas</b> : Dapur Umum,
-                                                    Tenda,
-                                                    Toilet, Tempat Ibadah, Free Buka & Sahur, Towing, Pos Kesehatan, Pos
-                                                    Komunikasi</p>
-                                            </td>
-                                            <td>
-                                                <a href="tel://-" target="_blank"><button
-                                                        class="btn btn-info">-</button></a>
-                                            </td>
-                                            <td>
-                                                <a href="https://www.google.com/maps/dir/Current+Location/-7.040018,110.421374/@-7.040018,110.421374,17z?entry=ttu"
-                                                    target="_blank"><button class="btn btn-primary">Buka
-                                                        Map</button></a>
-                                                <p>Jarak : 6.07 km</p>
-                                            </td>
-                                            <td>
-                                                <img src="/uploads/data_lokasi/20240328092020-2024-03-28data_lokasi092017.webp"
-                                                    width="100%" />
-                                            </td>
-                                        </tr>
-                                        <!-- ... -->
-                                    </tbody>
-                                </table>
-                            </div>
-                            <div class="info-wrap">
-                                <table>
-                                    <thead>
-                                        <tr>
-                                            <th style="width: 10%">No</th>
-                                            <th style="width: 40%">Nama Lokasi</th>
-                                            <th style="width: 15%">Telepon</th>
-                                            <th style="width: 20%">Link Map</th>
-                                            <th style="width: 15%">Foto</th>
-                                        </tr>
-                                    </thead>
-                                    <tbody>
-                                        <tr>
-                                            <td>1</td>
-                                            <td class="font-weight-bold mb-0">
-                                                Posko Mudik Gombel
-                                                <p class="text-muted mb-0 wrapword">Jl. Tanah Putih II, Ngesrep, Kec.
-                                                    Banyumanik, Kota Semarang, Jawa Tengah 50261</p>
-                                                <p class="text-muted mb-0 wrapword"><b>Fasilitas</b> : Dapur Umum,
-                                                    Tenda,
-                                                    Toilet, Tempat Ibadah, Free Buka & Sahur, Towing, Pos Kesehatan, Pos
-                                                    Komunikasi</p>
-                                            </td>
-                                            <td>
-                                                <a href="tel://-" target="_blank"><button
-                                                        class="btn btn-info">-</button></a>
-                                            </td>
-                                            <td>
-                                                <a href="https://www.google.com/maps/dir/Current+Location/-7.040018,110.421374/@-7.040018,110.421374,17z?entry=ttu"
-                                                    target="_blank"><button class="btn btn-primary">Buka
-                                                        Map</button></a>
-                                                <p>Jarak : 6.07 km</p>
-                                            </td>
-                                            <td>
-                                                <img src="/uploads/data_lokasi/20240328092020-2024-03-28data_lokasi092017.webp"
-                                                    width="100%" />
-                                            </td>
-                                        </tr>
-                                        <!-- ... -->
-                                    </tbody>
+                            <!-- <div class="card"> -->
+                            <table class="table">
+                                <thead>
+                                    <tr>
+                                        <th style="width: 10%">No</th>
+                                        <th style="width: 40%">Nama Lokasi</th>
+                                        <th style="width: 15%">Telepon</th>
+                                        <th style="width: 20%">Link Map</th>
+                                        <th style="width: 15%">Foto</th>
+                                    </tr>
+                                </thead>
 
+                                <tbody>
+                                    <tr>
+                                        <td colspan="5">
+                                            <div class="card">
+                                                <div class="card-body">
+                                                    <div class="row">
+                                                        <div class="col-md-1">1</div>
+                                                        <div class="col-md-4" style="text-align: left;">
+                                                            <h5 class="card-title font-weight-bold">Posko Mudik Gombel
+                                                            </h5>
+                                                            <p class="text-muted mb-0 wrapword">Jl. Tanah Putih II,
+                                                                Ngesrep, Kec. Banyumanik, Kota
+                                                                Semarang, Jawa Tengah 50261</p>
+                                                            <p class="text-muted mb-0 wrapword"><b>Fasilitas:</b> Dapur
+                                                                Umum, Tenda, Toilet, Tempat Ibadah, Free Buka & Sahur,
+                                                                Towing, Pos Kesehatan, Pos Komunikasi</p>
+                                                        </div>
+                                                        <div class="col-md-2">
+                                                            <a href="tel://-" target="_blank"><button
+                                                                    class="btn btn-info">-</button></a>
+                                                        </div>
+                                                        <div class="col-md-3">
+                                                            <a href="https://www.google.com/maps/dir/Current+Location/-7.040018,110.421374/@-7.040018,110.421374,17z?entry=ttu"
+                                                                target="_blank"><button class="btn btn-primary">Buka
+                                                                    Map</button></a>
+                                                            <p>Jarak : 6.07 km</p>
+                                                        </div>
+                                                        <div class="col-md-2">
+                                                            <img src="/uploads/data_lokasi/20240328092020-2024-03-28data_lokasi092017.webp"
+                                                                width="100%" />
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </td>
+                                    </tr>
 
-                                </table>
-                            </div>
+                                    <tr>
+                                        <td colspan="5">
+                                            <div class="card">
+                                                <div class="card-body">
+                                                    <div class="row">
+                                                        <div class="col-md-1">2</div>
+                                                        <div class="col-md-4" style="text-align: left;">
+                                                            <h5 class="card-title font-weight-bold">Posko Mudik Gombel
+                                                            </h5>
+                                                            <p class="text-muted mb-0 wrapword">Jl. Tanah Putih II,
+                                                                Ngesrep, Kec. Banyumanik, Kota
+                                                                Semarang, Jawa Tengah 50261</p>
+                                                            <p class="text-muted mb-0 wrapword"><b>Fasilitas:</b> Dapur
+                                                                Umum, Tenda, Toilet, Tempat Ibadah, Free Buka & Sahur,
+                                                                Towing, Pos Kesehatan, Pos Komunikasi</p>
+                                                        </div>
+                                                        <div class="col-md-2">
+                                                            <a href="tel://-" target="_blank"><button
+                                                                    class="btn btn-info">-</button></a>
+                                                        </div>
+                                                        <div class="col-md-3">
+                                                            <a href="https://www.google.com/maps/dir/Current+Location/-7.040018,110.421374/@-7.040018,110.421374,17z?entry=ttu"
+                                                                target="_blank"><button class="btn btn-primary">Buka
+                                                                    Map</button></a>
+                                                            <p>Jarak : 6.07 km</p>
+                                                        </div>
+                                                        <div class="col-md-2">
+                                                            <img src="/uploads/data_lokasi/20240328092020-2024-03-28data_lokasi092017.webp"
+                                                                width="100%" />
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td colspan="5">
+                                            <div class="card">
+                                                <div class="card-body">
+                                                    <div class="row">
+                                                        <div class="col-md-1">3</div>
+                                                        <div class="col-md-4" style="text-align: left;">
+                                                            <h5 class="card-title">Posko Mudik Gombel
+                                                            </h5>
+                                                            <p class="text-muted mb-0 wrapword">Jl. Tanah Putih II,
+                                                                Ngesrep, Kec. Banyumanik, Kota
+                                                                Semarang, Jawa Tengah 50261</p>
+                                                            <p class="text-muted mb-0 wrapword"><b>Fasilitas:</b> Dapur
+                                                                Umum, Tenda, Toilet, Tempat Ibadah, Free Buka & Sahur,
+                                                                Towing, Pos Kesehatan, Pos Komunikasi</p>
+                                                        </div>
+                                                        <div class="col-md-2">
+                                                            <a href="tel://-" target="_blank"><button
+                                                                    class="btn btn-info">-</button></a>
+                                                        </div>
+                                                        <div class="col-md-3">
+                                                            <a href="https://www.google.com/maps/dir/Current+Location/-7.040018,110.421374/@-7.040018,110.421374,17z?entry=ttu"
+                                                                target="_blank"><button class="btn btn-primary">Buka
+                                                                    Map</button></a>
+                                                            <p>Jarak : 6.07 km</p>
+                                                        </div>
+                                                        <div class="col-md-2">
+                                                            <img src="/uploads/data_lokasi/20240328092020-2024-03-28data_lokasi092017.webp"
+                                                                width="100%" />
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <!-- Baris Lainnya -->
+                                </tbody>
+                            </table>
                             <!-- Disabled and active states -->
                             <nav aria-label="...">
-                                <ul class="pagination">
+                                <ul class="pagination justify-content-end">
                                     <li class="page-item disabled">
                                         <a class="page-link" href="#" tabindex="-1" aria-disabled="true">Previous</a>
                                     </li>
