@@ -310,24 +310,14 @@
         <!-- Hero Section -->
         <section id="hero" class="hero section light-background">
 
-            <div class="container text-center">
+            <div class="container">
                 <div class="row gy-4">
                     <div class="col-lg-6 order-2 order-lg-1 d-flex flex-column justify-content-center"
                         data-aos="zoom-out">
-                        <!-- <p>We are team of talented designers making websites with Bootstrap</p>
-                        <div class="d-flex">
-                    <div class="col-lg-6 order-2 order-lg-1 d-flex flex-column justify-content-center"
-                        data-aos="zoom-out">-->
-                        <h1>Daftar Informasi Seputar <br><span>Sekolah Di Kota Semarang</span></h1>
-                        <!-- <p>We are team of talented designers making websites with Bootstrap</p> -->
-                        <!-- <div class="d-flex">
 
-                            <a href="#about" class="btn-get-started">Get Started</a>
-                            <a href="https://www.youtube.com/watch?v=Y7f98aduVJ8"
-                                class="glightbox btn-watch-video d-flex align-items-center"><i
-                                    class="bi bi-play-circle"></i><span>Watch
-                                    Video</span></a>
-                        </div> -->
+                        <h1 class="text-center">Daftar Informasi Seputar <br><span>Sekolah Di Kota Jepara</span></h1>
+                        <!-- <p>We are team of talented designers making websites with Bootstrap</p> -->
+
                     </div>
                 </div>
             </div>
@@ -363,14 +353,15 @@
                                                     <div class="row">
                                                         <div class="col-md-1">1</div>
                                                         <div class="col-md-4" style="text-align: left;">
-                                                            <h5 class="card-title font-weight-bold">Posko Mudik Gombel
-                                                            </h5>
-                                                            <p class="text-muted mb-0 wrapword">Jl. Tanah Putih II,
-                                                                Ngesrep, Kec. Banyumanik, Kota
-                                                                Semarang, Jawa Tengah 50261</p>
-                                                            <p class="text-muted mb-0 wrapword"><b>Fasilitas:</b> Dapur
+                                                            <p class="card-title font-weight-bold"><b>SDN Bandarharjo
+                                                                    01</b>
+                                                            </p>
+                                                            <p class="text-muted mb-0 wrapword">Jl. Cumi-Cumi Raya No.2,
+                                                                Bandarharjo, Kec. Semarang Utara, Kota Semarang, Jawa
+                                                                Tengah 50175</p>
+                                                            <!-- <p class="text-muted mb-0 wrapword"><b>Fasilitas:</b> Dapur
                                                                 Umum, Tenda, Toilet, Tempat Ibadah, Free Buka & Sahur,
-                                                                Towing, Pos Kesehatan, Pos Komunikasi</p>
+                                                                Towing, Pos Kesehatan, Pos Komunikasi</p> -->
                                                         </div>
                                                         <div class="col-md-2">
                                                             <a href="tel://-" target="_blank"><button
@@ -380,7 +371,7 @@
                                                             <a href="https://www.google.com/maps/dir/Current+Location/-7.040018,110.421374/@-7.040018,110.421374,17z?entry=ttu"
                                                                 target="_blank"><button class="btn btn-primary">Buka
                                                                     Map</button></a>
-                                                            <p>Jarak : 6.07 km</p>
+                                                            <p>Jarak : 11.02 km</p>
                                                         </div>
                                                         <div class="col-md-2">
                                                             <img src="/uploads/data_lokasi/20240328092020-2024-03-28data_lokasi092017.webp"
@@ -399,14 +390,15 @@
                                                     <div class="row">
                                                         <div class="col-md-1">2</div>
                                                         <div class="col-md-4" style="text-align: left;">
-                                                            <h5 class="card-title font-weight-bold">Posko Mudik Gombel
-                                                            </h5>
-                                                            <p class="text-muted mb-0 wrapword">Jl. Tanah Putih II,
-                                                                Ngesrep, Kec. Banyumanik, Kota
-                                                                Semarang, Jawa Tengah 50261</p>
-                                                            <p class="text-muted mb-0 wrapword"><b>Fasilitas:</b> Dapur
+                                                            <p class="card-title font-weight-bold"><b>SDN Bandarharjo
+                                                                    02</b>
+                                                            </p>
+                                                            <p class="text-muted mb-0 wrapword">Jl. Lodan Raya No.1,
+                                                                Bandarharjo, Kec. Semarang Utara, Kota Semarang, Jawa
+                                                                Tengah 50175</p>
+                                                            <!-- <p class="text-muted mb-0 wrapword"><b>Fasilitas:</b> Dapur
                                                                 Umum, Tenda, Toilet, Tempat Ibadah, Free Buka & Sahur,
-                                                                Towing, Pos Kesehatan, Pos Komunikasi</p>
+                                                                Towing, Pos Kesehatan, Pos Komunikasi</p> -->
                                                         </div>
                                                         <div class="col-md-2">
                                                             <a href="tel://-" target="_blank"><button
@@ -416,7 +408,7 @@
                                                             <a href="https://www.google.com/maps/dir/Current+Location/-7.040018,110.421374/@-7.040018,110.421374,17z?entry=ttu"
                                                                 target="_blank"><button class="btn btn-primary">Buka
                                                                     Map</button></a>
-                                                            <p>Jarak : 6.07 km</p>
+                                                            <p>Jarak : 10.07 km</p>
                                                         </div>
                                                         <div class="col-md-2">
                                                             <img src="/uploads/data_lokasi/20240328092020-2024-03-28data_lokasi092017.webp"
@@ -427,6 +419,7 @@
                                             </div>
                                         </td>
                                     </tr>
+
                                     <tr>
                                         <td colspan="5">
                                             <div class="card">
@@ -434,14 +427,15 @@
                                                     <div class="row">
                                                         <div class="col-md-1">3</div>
                                                         <div class="col-md-4" style="text-align: left;">
-                                                            <h5 class="card-title">Posko Mudik Gombel
-                                                            </h5>
-                                                            <p class="text-muted mb-0 wrapword">Jl. Tanah Putih II,
-                                                                Ngesrep, Kec. Banyumanik, Kota
-                                                                Semarang, Jawa Tengah 50261</p>
-                                                            <p class="text-muted mb-0 wrapword"><b>Fasilitas:</b> Dapur
+                                                            <p class="card-title font-weight-bold"><b>SD Negeri
+                                                                    Bangetayu Kulon</b>
+                                                            </p>
+                                                            <p class="text-muted mb-0 wrapword">Jl. Bangetayu Raya,
+                                                                Bangetayu Kulon, Kec. Genuk, Kota Semarang, Jawa Tengah
+                                                                50115</p>
+                                                            <!-- <p class="text-muted mb-0 wrapword"><b>Fasilitas:</b> Dapur
                                                                 Umum, Tenda, Toilet, Tempat Ibadah, Free Buka & Sahur,
-                                                                Towing, Pos Kesehatan, Pos Komunikasi</p>
+                                                                Towing, Pos Kesehatan, Pos Komunikasi</p> -->
                                                         </div>
                                                         <div class="col-md-2">
                                                             <a href="tel://-" target="_blank"><button
@@ -451,7 +445,7 @@
                                                             <a href="https://www.google.com/maps/dir/Current+Location/-7.040018,110.421374/@-7.040018,110.421374,17z?entry=ttu"
                                                                 target="_blank"><button class="btn btn-primary">Buka
                                                                     Map</button></a>
-                                                            <p>Jarak : 6.07 km</p>
+                                                            <p>Jarak : 8.07 km</p>
                                                         </div>
                                                         <div class="col-md-2">
                                                             <img src="/uploads/data_lokasi/20240328092020-2024-03-28data_lokasi092017.webp"
@@ -462,6 +456,7 @@
                                             </div>
                                         </td>
                                     </tr>
+
                                     <!-- Baris Lainnya -->
                                 </tbody>
                             </table>
