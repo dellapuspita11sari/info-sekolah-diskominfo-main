@@ -29,6 +29,14 @@ if ($conn->connect_error) {
   <title>Diskominfo</title>
   <link rel="shortcut icon" type="image/png" href="assets/images/logos/logo-kominfo.png" />
   <link rel="stylesheet" href="assets/css/styles.min.css" />
+
+  <style>.address-cell {
+    max-width: 200px; /* Atur lebar maksimal sesuai kebutuhan */
+    white-space: nowrap; /* Mencegah teks berpindah ke baris berikutnya */
+    overflow: hidden; /* Menyembunyikan teks yang melebihi batas */
+    text-overflow: ellipsis; /* Menambahkan '...' pada teks yang terpotong */
+}
+</style>
 </head>
 
 <body>
@@ -150,7 +158,7 @@ if (isset($_GET['status']) && $_GET['status'] === 'success') {
             echo "<tr>";
             echo "<td>" . $no . "</td>"; // Menampilkan nomor urut
             echo "<td>" . $row["nama_lokasi"] . "</td>";
-            echo "<td>" . $row["alamat"] . "</td>"; // Menampilkan Alamat
+            echo "<td class='address-cell'>" . $row["alamat"] . "</td>"; // Menampilkan Alamat dengan batasan
             echo "<td><a href='" . $row["link_maps"] . "' target='_blank'>View Map</a></td>";
             echo "<td>" . $row["jarak"]."  ". "Km" . "</td>"; // Menampilkan Jarak
             echo "<td><img src='uploads/" . $row["gambar"] . "' alt='Image' style='width: 100px; height: auto;'></td>";
