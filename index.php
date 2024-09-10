@@ -1,15 +1,39 @@
+<?php
+include 'functions.php'; // Include file koneksi database
+$page = isset($_GET['page']) ? intval($_GET['page']) : 1;
+$entries_per_page = isset($_GET['entries']) ? intval($_GET['entries']) : 10;
+
+// Validasi nilai page dan entries_per_page
+if ($page < 1) $page = 1;
+if ($entries_per_page < 1) $entries_per_page = 10;
+
+// Hitung offset
+$offset = ($page - 1) * $entries_per_page;
+
+// Query total data
+$total_sql = "SELECT COUNT(*) AS total FROM sekolah";
+$total_result = $conn->query($total_sql);
+$total_row = $total_result->fetch_assoc();
+$total_rows = $total_row['total'];
+$totalPages = ceil($total_rows / $entries_per_page);
+
+// Query data dengan LIMIT dan OFFSET
+$sql = "SELECT id, nama_lokasi, alamat, link_maps, jarak, gambar FROM sekolah LIMIT $offset, $entries_per_page";
+$result = $conn->query($sql);
+
+?>
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
     <meta charset="utf-8">
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
-    <title>Index - BizLand Bootstrap Template</title>
+    <title>Informasi Sekolah</title>
     <meta name="description" content="">
     <meta name="keywords" content="">
 
     <!-- Favicons -->
-    <link href="assets/img/favicon.png" rel="icon">
+    <link href="assets/img/logo-kominfo.png" rel="icon">
     <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
 
     <!-- Fonts -->
@@ -66,7 +90,7 @@
         <div class="branding d-flex align-items-cente">
 
             <div class="container position-relative d-flex align-items-center justify-content-between">
-                <a href="index.html" class="logo d-flex align-items-center">
+                <a href="index.php" class="logo d-flex align-items-center">
                     <!-- Uncomment the line below if you also wish to use an image logo -->
                     <img src="assets/img/diskominfo/logo-info-sekolah.png" alt="file">
                     <!-- <h1 class="sitename">BizLand</h1> -->
@@ -74,33 +98,10 @@
 
                 <nav id="navmenu" class="navmenu">
                     <ul>
-                        <li><a href="#hero" class="active">Beranda</a></li>
-                        <li><a href="#about">Panduan Sekolah</a></li>
-                        <li><a href="#services">CCTV</a></li>
-                        <li><a href="#portfolio">Info Penting</a></li>
-                        <li><a href="#team">Infografis</a></li>
-                        <li><a href="#school">Sekolah</a></li>
-                        <li><a href="#contact">Kontak</a></li>
-                        <!-- <li class="dropdown"><a href="#"><span>Dropdown</span> <i
-                                    class="bi bi-chevron-down toggle-dropdown"></i></a>
-                            <ul>
-                                <li><a href="#">Dropdown 1</a></li>
-                                <li class="dropdown"><a href="#"><span>Deep Dropdown</span> <i
-                                            class="bi bi-chevron-down toggle-dropdown"></i></a>
-                                    <ul>
-                                        <li><a href="#">Deep Dropdown 1</a></li>
-                                        <li><a href="#">Deep Dropdown 2</a></li>
-                                        <li><a href="#">Deep Dropdown 3</a></li>
-                                        <li><a href="#">Deep Dropdown 4</a></li>
-                                        <li><a href="#">Deep Dropdown 5</a></li>
-                                    </ul>
-                                </li>
-                                <li><a href="#">Dropdown 2</a></li>
-                                <li><a href="#">Dropdown 3</a></li>
-                                <li><a href="#">Dropdown 4</a></li>
-                            </ul>
-                        </li>
-                        <li><a href="#contact">Contact</a></li> -->
+                        <li><a href="#hero" class="">Beranda</a></li>
+                        <li><a href="#footer">Kontak</a></li>
+                        <li><a href="admin\index.php">Login</a></li>
+
                     </ul>
                     <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
                 </nav>
@@ -146,7 +147,7 @@
                             <table class="table">
                                 <!-- <div class="card"> -->
                                 <div class="top-table">
-                                    <div class="filter-container">
+                                    <!-- <div class="filter-container">
                                         <label for="entries">Show:</label>
                                         <select id="entries">
                                             <option value="10">10</option>
@@ -154,168 +155,76 @@
                                             <option value="50">50</option>
                                             <option value="100">100</option>
                                         </select>
-                                    </div>
+                                    </div> -->
+
 
                                     <div class="search-container">
                                         <label for="search">Search:</label>
                                         <input type="text" id="search" placeholder="Cari Data...">
                                     </div>
+                                   
                                 </div>
                                 <thead>
                                     <tr>
                                         <th style="width: 10%">No</th>
                                         <th style="width: 40%">Nama Lokasi</th>
-                                        <th style="width: 15%">Telepon</th>
-                                        <th style="width: 20%">Link Map</th>
-                                        <th style="width: 15%">Foto</th>
+                                        <th style="width: 25%">Link Map</th>
+                                        <th style="width: 25%">Foto</th>
                                     </tr>
                                 </thead>
-                                <tbody>
-                                    <tr>
-                                        <td colspan="5">
-                                            <div class="card">
-                                                <div class="card-body">
-                                                    <div class="row">
-                                                        <div class="col-md-1">1</div>
-                                                        <div class="col-md-4" style="text-align: left;">
-                                                            <p class="card-title font-weight-bold"><b>SDN Bandarharjo
-                                                                    01</b>
-                                                            </p>
-                                                            <p class="text-muted mb-0 wrapword">Jl. Cumi-Cumi Raya No.2,
-                                                                Bandarharjo, Kec. Semarang Utara, Kota Semarang, Jawa
-                                                                Tengah 50175</p>
-                                                            <!-- <p class="text-muted mb-0 wrapword"><b>Fasilitas:</b> Dapur
-                                                                Umum, Tenda, Toilet, Tempat Ibadah, Free Buka & Sahur,
-                                                                Towing, Pos Kesehatan, Pos Komunikasi</p> -->
-                                                        </div>
-                                                        <div class="col-md-2">
-                                                            <a href="tel://-" target="_blank"><button
-                                                                    class="btn btn-info">-</button></a>
-                                                        </div>
-                                                        <div class="col-md-3">
-                                                            <a href="https://www.google.com/maps/dir/Current+Location/-7.040018,110.421374/@-7.040018,110.421374,17z?entry=ttu"
-                                                                target="_blank"><button class="btn btn-primary">Buka
-                                                                    Map</button></a>
-                                                            <p>Jarak : 11.02 km</p>
-                                                        </div>
-                                                        <div class="col-md-2">
-                                                            <img src="/uploads/data_lokasi/20240328092020-2024-03-28data_lokasi092017.webp"
-                                                                width="100%" />
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </td>
-                                    </tr>
+                        
 
-                                    <tr>
-                                        <td colspan="5">
-                                            <div class="card">
-                                                <div class="card-body">
-                                                    <div class="row">
-                                                        <div class="col-md-1">2</div>
-                                                        <div class="col-md-4" style="text-align: left;">
-                                                            <p class="card-title font-weight-bold"><b>SDN Bandarharjo
-                                                                    02</b>
-                                                            </p>
-                                                            <p class="text-muted mb-0 wrapword">Jl. Lodan Raya No.1,
-                                                                Bandarharjo, Kec. Semarang Utara, Kota Semarang, Jawa
-                                                                Tengah 50175</p>
-                                                            <!-- <p class="text-muted mb-0 wrapword"><b>Fasilitas:</b> Dapur
-                                                                Umum, Tenda, Toilet, Tempat Ibadah, Free Buka & Sahur,
-                                                                Towing, Pos Kesehatan, Pos Komunikasi</p> -->
-                                                        </div>
-                                                        <div class="col-md-2">
-                                                            <a href="tel://-" target="_blank"><button
-                                                                    class="btn btn-info">-</button></a>
-                                                        </div>
-                                                        <div class="col-md-3">
-                                                            <a href="https://www.google.com/maps/dir/Current+Location/-7.040018,110.421374/@-7.040018,110.421374,17z?entry=ttu"
-                                                                target="_blank"><button class="btn btn-primary">Buka
-                                                                    Map</button></a>
-                                                            <p>Jarak : 10.07 km</p>
-                                                        </div>
-                                                        <div class="col-md-2">
-                                                            <img src="/uploads/data_lokasi/20240328092020-2024-03-28data_lokasi092017.webp"
-                                                                width="100%" />
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </td>
-                                    </tr>
-
-                                    <tr>
-                                        <td colspan="5">
-                                            <div class="card">
-                                                <div class="card-body">
-                                                    <div class="row">
-                                                        <div class="col-md-1">3</div>
-                                                        <div class="col-md-4" style="text-align: left;">
-                                                            <p class="card-title font-weight-bold"><b>SD Negeri
-                                                                    Bangetayu Kulon</b>
-                                                            </p>
-                                                            <p class="text-muted mb-0 wrapword">Jl. Bangetayu Raya,
-                                                                Bangetayu Kulon, Kec. Genuk, Kota Semarang, Jawa Tengah
-                                                                50115</p>
-                                                            <!-- <p class="text-muted mb-0 wrapword"><b>Fasilitas:</b> Dapur
-                                                                Umum, Tenda, Toilet, Tempat Ibadah, Free Buka & Sahur,
-                                                                Towing, Pos Kesehatan, Pos Komunikasi</p> -->
-                                                        </div>
-                                                        <div class="col-md-2">
-                                                            <a href="tel://-" target="_blank"><button
-                                                                    class="btn btn-info">-</button></a>
-                                                        </div>
-                                                        <div class="col-md-3">
-                                                            <a href="https://www.google.com/maps/dir/Current+Location/-7.040018,110.421374/@-7.040018,110.421374,17z?entry=ttu"
-                                                                target="_blank"><button class="btn btn-primary">Buka
-                                                                    Map</button></a>
-                                                            <p>Jarak : 8.07 km</p>
-                                                        </div>
-                                                        <div class="col-md-2">
-                                                            <img src="/uploads/data_lokasi/20240328092020-2024-03-28data_lokasi092017.webp"
-                                                                width="100%" />
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </td>
-                                    </tr>
-
-                                    <!-- Baris Lainnya -->
+                                    <tbody>
+                                    <?php
+                                    if ($result->num_rows > 0) {
+                                        $no = $offset + 1;
+                                        while ($row = $result->fetch_assoc()) {
+                                            echo "<tr>";
+                                            echo "<td>" . $no++ . "</td>";
+                                            echo "<td>" . $row["nama_lokasi"] . "<br>" . $row["alamat"] . "</td>";
+                                            echo "<td><a href='" . $row["link_maps"] . "' target='_blank'><button class='btn btn-primary'>Buka Map</button></a><br>Jarak: " . $row["jarak"] . " km</td>";
+                                            echo "<td><img src='admin/uploads/" . $row["gambar"] . "' style='width: 100px; height: auto;' /></td>";
+                                            echo "</tr>";
+                                        }
+                                    } else {
+                                        echo "<tr><td colspan='4'>No records found</td></tr>";
+                                    }
+                                    ?>
                                 </tbody>
                             </table>
-
-                            <div class="bottom-table">
-                                <div class="entries-info" style="font-size: 16px; color: #666;">
-                                    Showing 1 to 10 of 16 entries
-                                </div>
-                                <!-- Disabled and active states -->
-                                <nav aria-label="...">
+                            <div class="pagination">
+                                <nav aria-label="Page navigation">
                                     <ul class="pagination justify-content-end">
-                                        <li class="page-item disabled">
-                                            <a class="page-link" href="#" tabindex="-1"
-                                                aria-disabled="true">Previous</a>
+                                        <!-- Previous page link -->
+                                        <li class="page-item <?php if ($page <= 1) echo 'disabled'; ?>">
+                                            <a class="page-link" href="<?php if ($page > 1) echo '?page=' . ($page - 1); ?>" aria-label="Previous">
+                                                <span aria-hidden="true">&laquo; Prev</span>
+                                            </a>
                                         </li>
-                                        <li class="page-item"><a class="page-link" href="#">1</a></li>
-                                        <li class="page-item active" aria-current="page">
-                                            <a class="page-link" href="#">2</a>
-                                        </li>
-                                        <li class="page-item"><a class="page-link" href="#">3</a></li>
-                                        <li class="page-item">
-                                            <a class="page-link" href="#">Next</a>
+
+                                        <!-- Page number links -->
+                                        <?php
+                                        $start_page = max(1, $page - 2); // Mulai dari dua halaman sebelumnya, jika ada
+                                        $end_page = min($totalPages, $page + 2); // Sampai dua halaman setelah, jika ada
+
+                                        for ($i = $start_page; $i <= $end_page; $i++) {
+                                            $activeClass = ($i == $page) ? 'active' : '';
+                                            echo "<li class='page-item $activeClass'><a class='page-link' href='?page=$i&entries=$entries_per_page'>$i</a></li>";
+                                        }
+                                        ?>
+
+                                        <!-- Next page link -->
+                                        <li class="page-item <?php if ($page >= $totalPages) echo 'disabled'; ?>">
+                                            <a class="page-link" href="<?php if ($page < $totalPages) echo '?page=' . ($page + 1); ?>" aria-label="Next">
+                                                <span aria-hidden="true">Next &raquo;</span>
+                                            </a>
                                         </li>
                                     </ul>
                                 </nav>
-                                <!-- End Disabled and active states -->
                             </div>
-
                         </div>
-
                     </div>
-
                 </div>
-
         </section><!-- /Contact Section -->
 
 
@@ -436,7 +345,6 @@
                                                         <div class="text"> <i class="fa fa-phone"></i> <a
                                                                 href="tel:112">Call
                                                                 Center Darurat 112</a></div>
-
                                                     </li>
 
                                                     <li style="padding-left:0px">
@@ -568,6 +476,104 @@
 
     <!-- Main JS File -->
     <script src="assets/js/main.js"></script>
+    <script>
+    document.addEventListener("DOMContentLoaded", function() {
+        // Get references to the elements
+        const searchInput = document.getElementById('search');
+        const entriesSelect = document.getElementById('entries');
+        const tableBody = document.querySelector('tbody');
+
+        // Function to filter rows based on search input
+        function filterTable() {
+            const searchText = searchInput.value.toLowerCase();
+            const rows = tableBody.querySelectorAll('tr');
+
+            rows.forEach(row => {
+                const cells = row.querySelectorAll('td');
+                let found = false;
+                
+                cells.forEach(cell => {
+                    if (cell.textContent.toLowerCase().includes(searchText)) {
+                        found = true;
+                    }
+                });
+
+                if (found) {
+                    row.style.display = '';
+                } else {
+                    row.style.display = 'none';
+                }
+            });
+        }
+
+        // Function to handle pagination and number of entries
+        function handleEntriesChange() {
+            const entries = parseInt(entriesSelect.value, 10);
+            const rows = tableBody.querySelectorAll('tr');
+
+            rows.forEach((row, index) => {
+                if (index < entries) {
+                    row.style.display = '';
+                } else {
+                    row.style.display = 'none';
+                }
+            });
+
+            // Apply search filter after changing the number of entries
+            filterTable();
+        }
+
+        // Add event listeners
+        searchInput.addEventListener('input', filterTable);
+        entriesSelect.addEventListener('change', handleEntriesChange);
+
+        // Initial call to display correct number of entries
+        handleEntriesChange();
+    });
+</script>
+<style>
+    .filter-container {
+        margin-bottom: 20px;
+        display: flex;
+        align-items: center;
+    }
+
+    .filter-container label {
+        font-weight: bold;
+        margin-right: 10px;
+        color: #343a40; /* Warna teks label gelap */
+    }
+
+    .filter-container select {
+        padding: 8px 12px;
+        border: 1px solid #6c757d; /* Warna border abu-abu gelap */
+        border-radius: 4px;
+        background-color: #e9ecef; /* Warna latar belakang abu-abu sangat terang */
+        color: #495057; /* Warna teks abu-abu gelap */
+        font-size: 14px;
+    }
+
+    .filter-container select option {
+        background-color: #f8f9fa; /* Warna latar belakang opsi abu-abu sangat terang */
+        color: #495057; /* Warna teks abu-abu gelap */
+    }
+
+    .filter-container select:focus {
+        border-color: #80bdff;
+        outline: none;
+        box-shadow: 0 0 0 0.2rem rgba(38, 143, 255, 0.25);
+    }
+</style>
+
+<script>
+document.getElementById('entries').addEventListener('change', function() {
+    const entries = this.value;
+    const urlParams = new URLSearchParams(window.location.search);
+    urlParams.set('entries', entries);
+    window.location.search = urlParams.toString();
+});
+</script>
+
 
 </body>
 
