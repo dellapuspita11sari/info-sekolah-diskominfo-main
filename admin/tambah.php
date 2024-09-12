@@ -121,9 +121,9 @@ if (!isset($_SESSION["login"]) ) {
                       </div>
 
                       <div class="mb-3">
-    <label for="jarak" class="form-label">Jarak</label>
-    <input type="number" class="form-control" id="jarak" name="jarak" required placeholder="Masukan Jarak (dalam Kilometer)">
-</div>
+                          <label for="jarak" class="form-label">Jarak</label>
+                          <input type="number" class="form-control" id="jarak" name="jarak" required placeholder="Masukan Jarak (dalam Kilometer)">
+                      </div>
 
                       <div class="mb-3">
                           <label for="gambar" class="form-label">Gambar</label>

@@ -52,9 +52,9 @@ if (isset($_POST["login"])) {
             <div class="card mb-0">
               <div class="card-body">
                 <a href="./index.html" class="text-nowrap logo-img text-center d-block py-3 w-100">
-                  <img src="assets/images/logos/kominfo.png" width="120" alt="">
+                  <img src="assets/images/logos/kominfo-kita.png" width="120" alt="">
                 </a>
-                <p class="text-center">Masukan Username & Password Anda !!</p>
+                <p class="text-center">Masukan Username & Password Anda</p>
                 <form action="" method="post">
                   <div class="mb-3">
                     <label for="username" class="form-label">Username</label>
@@ -71,11 +71,11 @@ if (isset($_POST["login"])) {
                   </div>
                   <div class="d-flex align-items-center justify-content-between mb-4">
                     <?php if (isset($eror)) : ?>
-                      <a class="text-danger fw-bold text-center" href="" style="font-style: italic;">username atau password salah!!!</a>
+                      <a class="text-danger fw-bold text-center" href="" style="font-style: italic;">username atau password salah</a>
                     <?php endif; ?>
                   </div>
                   <button type="submit" class="btn btn-primary w-100 py-8 fs-4 mb-2 rounded-2" name="login">Login</button>
-                  <button type="button" class="btn btn-danger w-100 py-8 fs-4 rounded-2" onclick="window.history.back();">Back</button>
+                  <a href="../index.php" class="btn btn-danger w-100 py-8 fs-4 rounded-2">Back</a>
                 </form>
               </div>
             </div>

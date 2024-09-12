@@ -2,6 +2,7 @@
 include 'functions.php'; // Include file koneksi database
 $page = isset($_GET['page']) ? intval($_GET['page']) : 1;
 $entries_per_page = isset($_GET['entries']) ? intval($_GET['entries']) : 10;
+$search = isset($_GET['search']) ? $conn->real_escape_string($_GET['search']) : '';
 
 // Validasi nilai page dan entries_per_page
 if ($page < 1) $page = 1;
@@ -11,14 +12,16 @@ if ($entries_per_page < 1) $entries_per_page = 10;
 $offset = ($page - 1) * $entries_per_page;
 
 // Query total data
-$total_sql = "SELECT COUNT(*) AS total FROM sekolah";
+$total_sql = "SELECT COUNT(*) AS total FROM sekolah WHERE nama_lokasi LIKE '%$search%' OR alamat LIKE '%$search%'";
 $total_result = $conn->query($total_sql);
 $total_row = $total_result->fetch_assoc();
 $total_rows = $total_row['total'];
 $totalPages = ceil($total_rows / $entries_per_page);
 
 // Query data dengan LIMIT dan OFFSET
-$sql = "SELECT id, nama_lokasi, alamat, link_maps, jarak, gambar FROM sekolah LIMIT $offset, $entries_per_page";
+$sql = "SELECT id, nama_lokasi, alamat, link_maps, jarak, gambar FROM sekolah 
+        WHERE nama_lokasi LIKE '%$search%' OR alamat LIKE '%$search%' 
+        LIMIT $offset, $entries_per_page";
 $result = $conn->query($sql);
 
 ?>
@@ -52,6 +55,9 @@ $result = $conn->query($sql);
 
     <!-- Main CSS File -->
     <link href="assets/css/main.css" rel="stylesheet">
+    <!-- Bootstrap CSS -->
+<link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+
 </head>
 
 <style type="text/css">
@@ -92,7 +98,7 @@ $result = $conn->query($sql);
             <div class="container position-relative d-flex align-items-center justify-content-between">
                 <a href="index.php" class="logo d-flex align-items-center">
                     <!-- Uncomment the line below if you also wish to use an image logo -->
-                    <img src="assets/img/diskominfo/logo-info-sekolah.png" alt="file">
+                    <img src="assets/img/diskominfo/logo-kita.png" alt="file">
                     <!-- <h1 class="sitename">BizLand</h1> -->
                 </a>
 
@@ -166,24 +172,48 @@ $result = $conn->query($sql);
                                 </div>
                                 <thead>
                                     <tr>
-                                        <th style="width: 10%">No</th>
-                                        <th style="width: 40%">Nama Lokasi</th>
-                                        <th style="width: 25%">Link Map</th>
-                                        <th style="width: 25%">Foto</th>
+                                        <th style="width: 5%">No</th>
+                                        <th style="width: 70%">Nama Lokasi</th>
+                                        <th style="width: 15%">Link Map</th>
+                                        <th style="width: 15%">Foto</th>
                                     </tr>
                                 </thead>
                         
 
-                                    <tbody>
+                                <tbody>
                                     <?php
                                     if ($result->num_rows > 0) {
                                         $no = $offset + 1;
                                         while ($row = $result->fetch_assoc()) {
                                             echo "<tr>";
                                             echo "<td>" . $no++ . "</td>";
-                                            echo "<td>" . $row["nama_lokasi"] . "<br>" . $row["alamat"] . "</td>";
+                                            echo "<td><strong>" . $row["nama_lokasi"] . "</strong><br>" . $row["alamat"] . "</td>";
                                             echo "<td><a href='" . $row["link_maps"] . "' target='_blank'><button class='btn btn-primary'>Buka Map</button></a><br>Jarak: " . $row["jarak"] . " km</td>";
-                                            echo "<td><img src='admin/uploads/" . $row["gambar"] . "' style='width: 100px; height: auto;' /></td>";
+                                            echo "<td>
+                                                    <div style='width: 200px; height: 100px; overflow: hidden;'>
+                                                        <img src='admin/uploads/" . $row["gambar"] . "' style='width: 200px; height: 100px; object-fit: cover; background-color: #f0f0f0; cursor: pointer;' class='img-thumbnail' data-toggle='modal' data-target='#previewModal" . $row["id"] . "' />
+                                                    </div>
+                                                    
+                                                    <!-- Modal -->
+                                                    <div class='modal fade' id='previewModal" . $row["id"] . "' tabindex='-1' role='dialog' aria-labelledby='previewLabel" . $row["id"] . "' aria-hidden='true'>
+                                                    <div class='modal-dialog' role='document'>
+                                                        <div class='modal-content'>
+                                                        <div class='modal-header'>
+                                                            <h5 class='modal-title' id='previewLabel" . $row["id"] . "'>Preview Gambar</h5>
+                                                            <button type='button' class='close' data-dismiss='modal' aria-label='Close'>
+                                                            <span aria-hidden='true'>&times;</span>
+                                                            </button>
+                                                        </div>
+                                                        <div class='modal-body'>
+                                                            <img src='admin/uploads/" . $row["gambar"] . "' class='img-fluid' style='width: 100%; height: auto;' />
+                                                        </div>
+                                                        <div class='modal-footer'>
+                                                            <button type='button' class='btn btn-secondary' data-dismiss='modal'>Tutup</button>
+                                                        </div>
+                                                        </div>
+                                                    </div>
+                                                    </div>
+                                                </td>";
                                             echo "</tr>";
                                         }
                                     } else {
@@ -191,6 +221,8 @@ $result = $conn->query($sql);
                                     }
                                     ?>
                                 </tbody>
+
+
                             </table>
                             <div class="pagination">
                                 <nav aria-label="Page navigation">
@@ -256,14 +288,14 @@ $result = $conn->query($sql);
 
                                             <div class="logo">
                                                 <a href="/">
-                                                    <img src="assets/img/diskominfo/logo-info-sekolah.png" alt=""
+                                                    <img src="assets/img/diskominfo/logo-kita.png" alt=""
                                                         class="logo-image pb-3">
                                                 </a>
                                             </div>
                                             <div class="text">
 
-                                                <p>Info Mudik 2024 adalah Portal Website Dapatkan informasi seputar
-                                                    mudik tahun
+                                                <p>Info Sekolah 2024 adalah Portal Website Dapatkan informasi seputar
+                                                    sekolah tahun
                                                     2024 Kota Semarang disini.</p>
 
                                             </div>
@@ -345,16 +377,6 @@ $result = $conn->query($sql);
                                                         <div class="text"> <i class="fa fa-phone"></i> <a
                                                                 href="tel:112">Call
                                                                 Center Darurat 112</a></div>
-                                                    </li>
-
-                                                    <li style="padding-left:0px">
-
-
-
-                                                        <div class="text"><i class="fa fa-envelope"></i> <a
-                                                                href="mailto:infomudik@semarangkota.go.id">infomudik@semarangkota.go.id</a>
-                                                        </div>
-
                                                     </li>
 
 
@@ -574,6 +596,11 @@ document.getElementById('entries').addEventListener('change', function() {
 });
 </script>
 
+<!-- jQuery -->
+<script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+
+<!-- Bootstrap JS -->
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.bundle.min.js"></script>
 
 </body>
 

@@ -110,10 +110,17 @@ if ($conn->connect_error) {
                   <img src="assets/images/profile/user-1.jpg" alt="" width="35" height="35" class="rounded-circle">
                 </a>
                 <div class="dropdown-menu dropdown-menu-end dropdown-menu-animate-up" aria-labelledby="drop2">
-                  <div class="message-body">
-                    <a href="logout.php" class="btn btn-outline-primary mx-3 mt-2 d-block">Logout</a>
-                  </div>
+                    <div class="message-body">
+                        <a href="logout.php" class="btn btn-outline-primary mx-3 mt-2 d-block" onclick="return confirmLogout();">Logout</a>
+                    </div>
                 </div>
+
+                <script type="text/javascript">
+                    function confirmLogout() {
+                        return confirm('Apakah Anda yakin ingin logout?');
+                    }
+                </script>
+
               </li>
             </ul>
           </div>
@@ -161,7 +168,7 @@ if (isset($_GET['status']) && $_GET['status'] === 'success') {
             echo "<td class='address-cell'>" . $row["alamat"] . "</td>"; // Menampilkan Alamat dengan batasan
             echo "<td><a href='" . $row["link_maps"] . "' target='_blank'>View Map</a></td>";
             echo "<td>" . $row["jarak"]."  ". "Km" . "</td>"; // Menampilkan Jarak
-            echo "<td><img src='uploads/" . $row["gambar"] . "' alt='Image' style='width: 100px; height: auto;'></td>";
+            echo "<td><img src='uploads/" . $row["gambar"] . "' alt='Image' style='width: 200px; height: 100px;'></td>";
             echo "<td>";
             echo "<a href='edit.php?id=" . $row["id"] . "' class='btn btn-warning btn-sm'>Edit</a> ";
             echo "<a href='delete.php?id=" . $row["id"] . "' class='btn btn-danger btn-sm' onclick=\"return confirm('Are you sure you want to delete this item?');\">Delete</a>";
