@@ -130,7 +130,8 @@ if (!isset($_SESSION["login"]) ) {
                           <input type="file" class="form-control" id="gambar" name="gambar" accept="image/*" required>
                       </div>
  
-                    <button type="button" class="btn btn-danger" onclick="window.history.back();">Back</button>
+                    <!-- <button type="button" class="btn btn-danger" onclick="window.history.back();">Back</button> -->
+                    <a href="data.php" class="btn btn-danger rounded-2">Back</a>
 
                     <button type="submit" class="btn btn-primary">Submit</button>
                   </form>

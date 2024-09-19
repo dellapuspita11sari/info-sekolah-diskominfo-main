@@ -43,7 +43,7 @@ if (isset($_GET['id'])) {
     $stmt = $conn->prepare($sql);
     $stmt->bind_param("i", $id);
     if ($stmt->execute()) {
-        header("Location: data.php"); // Redirect setelah penghapusan
+        header(header: 'Location: data.php?status=destroy_success'); // Redirect setelah penghapusan
     } else {
         echo "Error deleting record: " . $conn->error;
     }

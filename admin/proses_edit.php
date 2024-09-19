@@ -43,11 +43,14 @@ $sql = "UPDATE sekolah SET nama_lokasi = ?, link_maps = ?, alamat = ?, jarak = ?
 $stmt = $conn->prepare($sql);
 $stmt->bind_param('sssssi', $nama_lokasi, $link_maps, $alamat, $jarak, $gambar_baru, $id);
 
+
+
 if ($stmt->execute()) {
-    echo 'Data berhasil diperbarui!';
-    header('Location: data.php');
+    // Redirect dengan status sukses
+    header(header: 'Location: data.php?status=update_success');
     exit;
 } else {
     echo 'Gagal memperbarui data.';
 }
+
 ?>

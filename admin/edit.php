@@ -84,7 +84,9 @@ $row = $result->fetch_assoc();
                                         style="width: 100px; height: auto; display: block; margin-top: 10px;">
                                 <?php endif; ?>
                             </div>
-                            <button type="button" class="btn btn-danger" onclick="window.history.back();">Back</button>
+                            <a href="data.php" class="btn btn-danger rounded-2">Back</a>
+
+                            <!-- <button type="button" class="btn btn-danger" onclick="window.history.back();">Back</button> -->
                             <button type="submit" class="btn btn-primary">Update</button>
                         </form>
                     </div>

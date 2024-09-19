@@ -1,30 +1,3 @@
-<?php
-include 'functions.php'; // Include file koneksi database
-$page = isset($_GET['page']) ? intval($_GET['page']) : 1;
-$entries_per_page = isset($_GET['entries']) ? intval($_GET['entries']) : 10;
-$search = isset($_GET['search']) ? $conn->real_escape_string($_GET['search']) : '';
-
-// Validasi nilai page dan entries_per_page
-if ($page < 1) $page = 1;
-if ($entries_per_page < 1) $entries_per_page = 10;
-
-// Hitung offset
-$offset = ($page - 1) * $entries_per_page;
-
-// Query total data
-$total_sql = "SELECT COUNT(*) AS total FROM sekolah WHERE nama_lokasi LIKE '%$search%' OR alamat LIKE '%$search%'";
-$total_result = $conn->query($total_sql);
-$total_row = $total_result->fetch_assoc();
-$total_rows = $total_row['total'];
-$totalPages = ceil($total_rows / $entries_per_page);
-
-// Query data dengan LIMIT dan OFFSET
-$sql = "SELECT id, nama_lokasi, alamat, link_maps, jarak, gambar FROM sekolah 
-        WHERE nama_lokasi LIKE '%$search%' OR alamat LIKE '%$search%' 
-        LIMIT $offset, $entries_per_page";
-$result = $conn->query($sql);
-
-?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -32,235 +5,88 @@ $result = $conn->query($sql);
     <meta charset="utf-8">
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
     <title>Informasi Sekolah</title>
-    <meta name="description" content="">
-    <meta name="keywords" content="">
-
-    <!-- Favicons -->
     <link href="assets/img/logo-kominfo.png" rel="icon">
-    <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
-
-    <!-- Fonts -->
-    <link href="https://fonts.googleapis.com" rel="preconnect">
-    <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
-    <link
-        href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600;1,700;1,800&family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
-        rel="stylesheet">
-
-    <!-- Vendor CSS Files -->
     <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-    <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
-    <link href="assets/vendor/aos/aos.css" rel="stylesheet">
-    <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
-    <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
-
-    <!-- Main CSS File -->
     <link href="assets/css/main.css" rel="stylesheet">
-    <!-- Bootstrap CSS -->
-<link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
-
+    <style>
+        .wrapword {
+            white-space: -moz-pre-wrap !important;
+            white-space: -pre-wrap;
+            white-space: -o-pre-wrap;
+            white-space: pre-wrap;
+            word-wrap: break-word;
+            white-space: -webkit-pre-wrap;
+            overflow-wrap: break-word;
+        }
+        .address-cell {
+            max-width: 200px;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+    </style>
 </head>
 
-<style type="text/css">
-</style>
-
-<style>
-.wrapword {
-    white-space: -moz-pre-wrap !important;
-    /* Mozilla, since 1999 */
-    white-space: -pre-wrap;
-    /* Opera 4-6 */
-    white-space: -o-pre-wrap;
-    /* Opera 7 */
-    white-space: pre-wrap;
-    /* css-3 */
-    word-wrap: break-word;
-    /* Internet Explorer 5.5+ */
-    white-space: -webkit-pre-wrap;
-    /* Newer versions of Chrome/Safari*/
-    /*word-break: break-all;*/
-    white-space: normal;
-    overflow-wrap: break-word;
-}
-</style>
-
 <body class="index-page">
-
     <header id="header" class="header sticky-top">
-
-        <div class="topbar d-flex align-items-center">
-            <div class="container d-flex justify-content-center justify-content-md-between">
-
-            </div>
-        </div><!-- End Top Bar -->
-
-        <div class="branding d-flex align-items-cente">
-
+        <div class="branding d-flex align-items-center">
             <div class="container position-relative d-flex align-items-center justify-content-between">
                 <a href="index.php" class="logo d-flex align-items-center">
-                    <!-- Uncomment the line below if you also wish to use an image logo -->
                     <img src="assets/img/diskominfo/logo-kita.png" alt="file">
-                    <!-- <h1 class="sitename">BizLand</h1> -->
                 </a>
-
                 <nav id="navmenu" class="navmenu">
                     <ul>
                         <li><a href="#hero" class="">Beranda</a></li>
                         <li><a href="#footer">Kontak</a></li>
-                        <li><a href="admin\index.php">Login</a></li>
-
+                        <li><a href="admin/index.php">Login</a></li>
                     </ul>
                     <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
                 </nav>
-
             </div>
-
         </div>
-
-        <div class="topbar d-flex align-items-center">
-            <div class="container d-flex justify-content-center justify-content-md-between">
-            </div>
-        </div><!-- End Top Bar -->
-
     </header>
 
     <main class="main">
-
-        <!-- Hero Section -->
         <section id="hero" class="hero section light-background">
-
             <div class="container">
                 <div class="row">
-                    <div class="justify-content-center" data-aos="zoom-out">
-
+                    <div class="justify-content-center">
                         <h1 class="text-center">Daftar Informasi Seputar <br><span>Sekolah Di Kota Semarang</span></h1>
-                        <!-- <p>We are team of talented designers making websites with Bootstrap</p> -->
-
                     </div>
                 </div>
             </div>
+        </section>
 
-        </section><!-- /Hero Section -->
-
-        <!-- Contact Section -->
         <section id="contact" class="contact section">
-            <div class="container" data-aos="fade-up" data-aos-delay="100">
-
+            <div class="container">
                 <div class="row gy-4">
-
                     <div class="col-lg">
-
                         <div class="info-wrap">
-                            <table class="table">
-                                <!-- <div class="card"> -->
-                                <div class="top-table">
-                                    <!-- <div class="filter-container">
-                                        <label for="entries">Show:</label>
-                                        <select id="entries">
-                                            <option value="10">10</option>
-                                            <option value="25">25</option>
-                                            <option value="50">50</option>
-                                            <option value="100">100</option>
-                                        </select>
-                                    </div> -->
-
-
-                                    <div class="search-container">
-                                        <label for="search">Search:</label>
-                                        <input type="text" id="search" placeholder="Cari Data...">
-                                    </div>
-                                   
-                                </div>
-                                <thead>
-                                    <tr>
-                                        <th style="width: 5%">No</th>
-                                        <th style="width: 70%">Nama Lokasi</th>
-                                        <th style="width: 15%">Link Map</th>
-                                        <th style="width: 15%">Foto</th>
-                                    </tr>
-                                </thead>
-                        
-
-                                <tbody>
-                                    <?php
-                                    if ($result->num_rows > 0) {
-                                        $no = $offset + 1;
-                                        while ($row = $result->fetch_assoc()) {
-                                            echo "<tr>";
-                                            echo "<td>" . $no++ . "</td>";
-                                            echo "<td><strong>" . $row["nama_lokasi"] . "</strong><br>" . $row["alamat"] . "</td>";
-                                            echo "<td><a href='" . $row["link_maps"] . "' target='_blank'><button class='btn btn-primary'>Buka Map</button></a><br>Jarak: " . $row["jarak"] . " km</td>";
-                                            echo "<td>
-                                                    <div style='width: 200px; height: 100px; overflow: hidden;'>
-                                                        <img src='admin/uploads/" . $row["gambar"] . "' style='width: 200px; height: 100px; object-fit: cover; background-color: #f0f0f0; cursor: pointer;' class='img-thumbnail' data-toggle='modal' data-target='#previewModal" . $row["id"] . "' />
-                                                    </div>
-                                                    
-                                                    <!-- Modal -->
-                                                    <div class='modal fade' id='previewModal" . $row["id"] . "' tabindex='-1' role='dialog' aria-labelledby='previewLabel" . $row["id"] . "' aria-hidden='true'>
-                                                    <div class='modal-dialog' role='document'>
-                                                        <div class='modal-content'>
-                                                        <div class='modal-header'>
-                                                            <h5 class='modal-title' id='previewLabel" . $row["id"] . "'>Preview Gambar</h5>
-                                                            <button type='button' class='close' data-dismiss='modal' aria-label='Close'>
-                                                            <span aria-hidden='true'>&times;</span>
-                                                            </button>
-                                                        </div>
-                                                        <div class='modal-body'>
-                                                            <img src='admin/uploads/" . $row["gambar"] . "' class='img-fluid' style='width: 100%; height: auto;' />
-                                                        </div>
-                                                        <div class='modal-footer'>
-                                                            <button type='button' class='btn btn-secondary' data-dismiss='modal'>Tutup</button>
-                                                        </div>
-                                                        </div>
-                                                    </div>
-                                                    </div>
-                                                </td>";
-                                            echo "</tr>";
-                                        }
-                                    } else {
-                                        echo "<tr><td colspan='4'>No records found</td></tr>";
-                                    }
-                                    ?>
-                                </tbody>
-
-
-                            </table>
-                            <div class="pagination">
-                                <nav aria-label="Page navigation">
-                                    <ul class="pagination justify-content-end">
-                                        <!-- Previous page link -->
-                                        <li class="page-item <?php if ($page <= 1) echo 'disabled'; ?>">
-                                            <a class="page-link" href="<?php if ($page > 1) echo '?page=' . ($page - 1); ?>" aria-label="Previous">
-                                                <span aria-hidden="true">&laquo; Prev</span>
-                                            </a>
-                                        </li>
-
-                                        <!-- Page number links -->
-                                        <?php
-                                        $start_page = max(1, $page - 2); // Mulai dari dua halaman sebelumnya, jika ada
-                                        $end_page = min($totalPages, $page + 2); // Sampai dua halaman setelah, jika ada
-
-                                        for ($i = $start_page; $i <= $end_page; $i++) {
-                                            $activeClass = ($i == $page) ? 'active' : '';
-                                            echo "<li class='page-item $activeClass'><a class='page-link' href='?page=$i&entries=$entries_per_page'>$i</a></li>";
-                                        }
-                                        ?>
-
-                                        <!-- Next page link -->
-                                        <li class="page-item <?php if ($page >= $totalPages) echo 'disabled'; ?>">
-                                            <a class="page-link" href="<?php if ($page < $totalPages) echo '?page=' . ($page + 1); ?>" aria-label="Next">
-                                                <span aria-hidden="true">Next &raquo;</span>
-                                            </a>
-                                        </li>
-                                    </ul>
-                                </nav>
+                            <!-- Search input -->
+                            <div class="mb-3">
+                                <input type="text" id="search" class="form-control" placeholder="Search...">
                             </div>
+
+                            <!-- Tempat data sekolah -->
+                            <div id="dataSekolah">
+                                <!-- Data dan pagination akan ditampilkan di sini oleh AJAX -->
+                            </div>
+
                         </div>
                     </div>
                 </div>
-        </section><!-- /Contact Section -->
-
-
+            </div>
+        </section>
     </main>
+
+    <!-- <footer id="footer" class="footer">
+        <div class="container">
+            <div class="copyright">
+                &copy; 2024 <strong><span>Diskominfo Semarang</span></strong>
+            </div>
+        </div>
+    </footer> -->
+
     <footer id="footer" class="footer">
         <!-- < id="footer" class="footer section"> -->
         <div class="container-footer" class="container" data-aos="fade-up" data-aos-delay="100">
@@ -294,8 +120,8 @@ $result = $conn->query($sql);
                                             </div>
                                             <div class="text">
 
-                                                <p>Info Sekolah 2024 adalah Portal Website Dapatkan informasi seputar
-                                                    sekolah tahun
+                                                <p>Informasi Seputar Sekolah 2024 adalah Portal Website Dapatkan informasi seputar
+                                                    Sekolah tahun
                                                     2024 Kota Semarang disini.</p>
 
                                             </div>
@@ -320,10 +146,8 @@ $result = $conn->query($sql);
                                                 <li><a target="_blank"
                                                         href="https://semarangkota.go.id/">Semarangkota.go.id</a>
                                                 </li>
-                                                <li><a target="_blank" href="tel:112">Call Center 112</a></li>
                                                 <li><a target="_blank"
-                                                        href="https://sapambakita.semarangkota.go.id/">Sapa Mbak
-                                                        Ita</a></li>
+                                                        href="https://diskominfo.semarangkota.go.id/">diskominfo.semarangkota.go.id</a></li>
 
                                             </ul>
 
@@ -360,7 +184,7 @@ $result = $conn->query($sql);
                                                 <ul class="contact-list">
 
 
-                                                    <li style="padding-left:0px">
+                                                    <!-- <li style="padding-left:0px">
 
 
 
@@ -377,6 +201,17 @@ $result = $conn->query($sql);
                                                         <div class="text"> <i class="fa fa-phone"></i> <a
                                                                 href="tel:112">Call
                                                                 Center Darurat 112</a></div>
+                                                    </li> -->
+
+                                                    <li style="padding-left:0px">
+
+
+
+                                                        <div class="text"><i class="fa fa-envelope"></i> <a
+                                                                href="mailto:diskominfo@semarangkota.go.id">
+                                                                diskominfo@semarangkota.go.id</a>
+                                                        </div>
+
                                                     </li>
 
 
@@ -385,7 +220,7 @@ $result = $conn->query($sql);
 
 
                                                         <div class="text"> <i class="fa fa-map-marker"></i>
-                                                            Jl.Pemuda No.148, Kota Semarang</div>
+                                                        Jl.Pemuda 148, Sekayu, Semarang Tengah, Kota Semarang</div>
 
                                                     </li>
 
@@ -453,11 +288,9 @@ $result = $conn->query($sql);
 
                         <div class="inner-container clearfix">
 
-                            <div class="copyright-text">
+                                <div class="copy-right text-on-surface-variant1 caption1">©2024 Dinas
+                            Komunikasi, Informatika, Statistik dan Persandian Kota Semarang.</div>
 
-                                <p>© Copyright 2022 All Rights Reserved by Pemkot Semarang</p>
-
-                            </div>
 
                         </div>
 
@@ -471,137 +304,41 @@ $result = $conn->query($sql);
 
         <!-- </section> -->
 
-    </footer>
-
-    <!-- Scroll Top -->
-    <a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center"><i
-            class="bi bi-arrow-up-short"></i></a>
-
-    <!-- Preloader -->
-    <div id="preloader">
-        <div></div>
-        <div></div>
-        <div></div>
-        <div></div>
-    </div>
-
-    <!-- Vendor JS Files -->
-    <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-    <script src="assets/vendor/php-email-form/validate.js"></script>
-    <script src="assets/vendor/aos/aos.js"></script>
-    <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
-    <script src="assets/vendor/waypoints/noframework.waypoints.js"></script>
-    <script src="assets/vendor/purecounter/purecounter_vanilla.js"></script>
-    <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
-    <script src="assets/vendor/imagesloaded/imagesloaded.pkgd.min.js"></script>
-    <script src="assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
-
-    <!-- Main JS File -->
-    <script src="assets/js/main.js"></script>
+    <!-- Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.2/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
     <script>
-    document.addEventListener("DOMContentLoaded", function() {
-        // Get references to the elements
-        const searchInput = document.getElementById('search');
-        const entriesSelect = document.getElementById('entries');
-        const tableBody = document.querySelector('tbody');
-
-        // Function to filter rows based on search input
-        function filterTable() {
-            const searchText = searchInput.value.toLowerCase();
-            const rows = tableBody.querySelectorAll('tr');
-
-            rows.forEach(row => {
-                const cells = row.querySelectorAll('td');
-                let found = false;
-                
-                cells.forEach(cell => {
-                    if (cell.textContent.toLowerCase().includes(searchText)) {
-                        found = true;
+        $(document).ready(function() {
+            function load_data(page = 1, entries = 10, search = '') {
+                $.ajax({
+                    url: 'fetch_data.php',
+                    type: 'GET',
+                    data: { page: page, entries: entries, search: search },
+                    success: function(response) {
+                        $('#dataSekolah').html(response);
                     }
                 });
+            }
 
-                if (found) {
-                    row.style.display = '';
-                } else {
-                    row.style.display = 'none';
-                }
-            });
-        }
+            // Load initial data
+            load_data();
 
-        // Function to handle pagination and number of entries
-        function handleEntriesChange() {
-            const entries = parseInt(entriesSelect.value, 10);
-            const rows = tableBody.querySelectorAll('tr');
-
-            rows.forEach((row, index) => {
-                if (index < entries) {
-                    row.style.display = '';
-                } else {
-                    row.style.display = 'none';
-                }
+            // Handle search input
+            $('#search').on('keyup', function() {
+                var search = $(this).val();
+                load_data(1, 10, search); // Reload data with search term
             });
 
-            // Apply search filter after changing the number of entries
-            filterTable();
-        }
-
-        // Add event listeners
-        searchInput.addEventListener('input', filterTable);
-        entriesSelect.addEventListener('change', handleEntriesChange);
-
-        // Initial call to display correct number of entries
-        handleEntriesChange();
-    });
-</script>
-<style>
-    .filter-container {
-        margin-bottom: 20px;
-        display: flex;
-        align-items: center;
-    }
-
-    .filter-container label {
-        font-weight: bold;
-        margin-right: 10px;
-        color: #343a40; /* Warna teks label gelap */
-    }
-
-    .filter-container select {
-        padding: 8px 12px;
-        border: 1px solid #6c757d; /* Warna border abu-abu gelap */
-        border-radius: 4px;
-        background-color: #e9ecef; /* Warna latar belakang abu-abu sangat terang */
-        color: #495057; /* Warna teks abu-abu gelap */
-        font-size: 14px;
-    }
-
-    .filter-container select option {
-        background-color: #f8f9fa; /* Warna latar belakang opsi abu-abu sangat terang */
-        color: #495057; /* Warna teks abu-abu gelap */
-    }
-
-    .filter-container select:focus {
-        border-color: #80bdff;
-        outline: none;
-        box-shadow: 0 0 0 0.2rem rgba(38, 143, 255, 0.25);
-    }
-</style>
-
-<script>
-document.getElementById('entries').addEventListener('change', function() {
-    const entries = this.value;
-    const urlParams = new URLSearchParams(window.location.search);
-    urlParams.set('entries', entries);
-    window.location.search = urlParams.toString();
-});
-</script>
-
-<!-- jQuery -->
-<script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
-
-<!-- Bootstrap JS -->
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.bundle.min.js"></script>
-
+            // Handle pagination
+            $(document).on('click', '.pagination .page-link', function(e) {
+                e.preventDefault();
+                var page = $(this).data('page');
+                var search = $('#search').val();
+                load_data(page, 10, search);
+            });
+        });
+    </script>
 </body>
 
 </html>
