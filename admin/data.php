@@ -72,7 +72,7 @@ if ($conn->connect_error) {
             </li>
             <li class="nav-small-cap">
               <i class="ti ti-dots nav-small-cap-icon fs-4"></i>
-              <span class="hide-menu">Data Sekolah</span>
+              <span class="hide-menu">Data Kelurahan </span>
             </li>
             <li class="sidebar-item">
               <a class="sidebar-link" href="data.php" aria-expanded="false">
@@ -146,7 +146,7 @@ if ($conn->connect_error) {
                     }
 
                     ?>
-                        <h5 class="card-title fw-semibold mb-4">Data Sekolah</h5>
+                        <h5 class="card-title fw-semibold mb-4">Data Kelurahan & Kecamatan</h5>
                         <p class="mb-3"><a href="tambah.php">Tambah Data</a></p>
 
                         <!-- Search input -->

@@ -13,7 +13,7 @@ if (isset($_GET['id'])) {
     $servername = "localhost";
     $username = "root";
     $password = "";
-    $dbname = "db_kominfo";
+    $dbname = "db_kominfokelurahan";
 
     $conn = new mysqli($servername, $username, $password, $dbname);
 

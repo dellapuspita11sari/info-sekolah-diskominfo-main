@@ -4,7 +4,7 @@
 <head>
     <meta charset="utf-8">
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
-    <title>Informasi Sekolah</title>
+    <title>Informasi Kelurahan dan Kecamatan</title>
     <link href="assets/img/logo-kominfo.png" rel="icon">
     <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
     <link href="assets/css/main.css" rel="stylesheet">
@@ -51,7 +51,7 @@
             <div class="container">
                 <div class="row">
                     <div class="justify-content-center">
-                        <h1 class="text-center">Daftar Informasi Seputar <br><span>Sekolah Di Kota Semarang</span></h1>
+                        <h1 class="text-center">Daftar Informasi Seputar <br><span>Kelurahan dan Kecamatan Di Kota Semarang</span></h1>
                     </div>
                 </div>
             </div>
@@ -120,8 +120,8 @@
                                             </div>
                                             <div class="text">
 
-                                                <p>Informasi Seputar Sekolah 2024 adalah Portal Website Dapatkan informasi seputar
-                                                    Sekolah tahun
+                                                <p>Informasi Seputar Kelurahan dan Kecamatan 2024 adalah Portal Website. Dapatkan informasi seputar
+                                                    Kelurahan dan Kecamatan tahun
                                                     2024 Kota Semarang disini.</p>
 
                                             </div>
